@@ -16,9 +16,10 @@ app.directive('homeApp', function (reactDirective) {
 function getRoute() {
   return {
     template,
-    controller($scope, Private) {
+    controller($scope, Private, $translate) {
       $scope.addBasePath = chrome.addBasePath;
       $scope.directories = Private(FeatureCatalogueRegistryProvider).inTitleOrder;
+      $scope.t = chrome.getReactTranslateFun($translate.instant);
     }
   };
 }

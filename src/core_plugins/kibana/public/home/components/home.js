@@ -9,7 +9,7 @@ import {
 } from 'ui_framework/components';
 import { FeatureCatalogueCategory } from 'ui/registry/feature_catalogue';
 
-export function Home({ addBasePath, directories }) {
+export function Home({ addBasePath, directories, t }) {
 
   const renderDirectories = (category) => {
     return directories
@@ -20,9 +20,9 @@ export function Home({ addBasePath, directories }) {
         return (
           <KuiFlexItem style={{ minHeight: 64 }} key={directory.id}>
             <Synopsis
-              description={directory.description}
+              description={t(directory.description)}
               iconUrl={addBasePath(directory.icon)}
-              title={directory.title}
+              title={t(directory.title)}
               url={addBasePath(directory.path)}
             />
           </KuiFlexItem>
@@ -43,7 +43,7 @@ export function Home({ addBasePath, directories }) {
           >
             <KuiFlexItem>
               <h1 className="kuiTitle">
-                Welcome to Kibana
+                {t('Welcome to Kibana')}
               </h1>
             </KuiFlexItem>
 
@@ -51,7 +51,7 @@ export function Home({ addBasePath, directories }) {
               <KuiFlexGroup alignItems="center">
                 <KuiFlexItem grow={false}>
                   <p className="kuiText kuiSubduedText">
-                    Data already in Elasticsearch?
+                    {t('Data already in Elasticsearch?')}
                   </p>
                 </KuiFlexItem>
 
@@ -60,7 +60,7 @@ export function Home({ addBasePath, directories }) {
                     buttonType="secondary"
                     href={addBasePath('/app/kibana#/management/kibana/index')}
                   >
-                    Set up index patterns
+                    {t('Set up index patterns')}
                   </KuiLinkButton>
                 </KuiFlexItem>
               </KuiFlexGroup>
@@ -73,7 +73,7 @@ export function Home({ addBasePath, directories }) {
           <KuiFlexGroup className="kuiVerticalRhythm">
             <KuiFlexItem className="kuiPanel homePanel">
               <h3 className="kuiSubTitle kuiVerticalRhythm">
-                Visualize and Explore Data
+                {t('Visualize and Explore Data')}
               </h3>
               <KuiFlexGrid className="kuiVerticalRhythmSmall homeTopFeatures" columns={2}>
                 { renderDirectories(FeatureCatalogueCategory.DATA) }
@@ -81,7 +81,7 @@ export function Home({ addBasePath, directories }) {
             </KuiFlexItem>
             <KuiFlexItem className="kuiPanel homePanel">
               <h3 className="kuiSubTitle kuiVerticalRhythm">
-                Manage and Administer the Elastic Stack
+                {t('Manage and Administer the Elastic Stack')}
               </h3>
               <KuiFlexGrid className="kuiVerticalRhythmSmall homeTopFeatures" columns={2}>
                 { renderDirectories(FeatureCatalogueCategory.ADMIN) }
@@ -92,13 +92,13 @@ export function Home({ addBasePath, directories }) {
 
         <div className="kuiViewContentItem kuiVerticalRhythmXLarge text-center">
           <h4 className="kuiSubduedText kuiVerticalRhythmSmall">
-            Didn’t find what you were looking for?
+            {t('Didn’t find what you were looking for?')}
           </h4>
           <KuiLinkButton
             buttonType="secondary"
             href="#/home/feature_directory"
           >
-            View full directory of Kibana plugins
+            {t('View full directory of Kibana plugins')}
           </KuiLinkButton>
         </div>
 
@@ -117,5 +117,6 @@ Home.propTypes = {
     path: PropTypes.string.isRequired,
     showOnHomePage: PropTypes.bool.isRequired,
     category: PropTypes.string.isRequired
-  }))
+  })),
+  t: PropTypes.func.isRequired
 };

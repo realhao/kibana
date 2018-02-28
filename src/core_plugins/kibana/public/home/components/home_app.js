@@ -8,7 +8,7 @@ import {
   Route
 } from 'react-router-dom';
 
-export function HomeApp({ addBasePath, directories }) {
+export function HomeApp({ addBasePath, directories, t }) {
   return (
     <Router>
       <Switch>
@@ -26,6 +26,7 @@ export function HomeApp({ addBasePath, directories }) {
           <Home
             addBasePath={addBasePath}
             directories={directories}
+            t={t}
           />
         </Route>
       </Switch>
@@ -43,5 +44,6 @@ HomeApp.propTypes = {
     path: PropTypes.string.isRequired,
     showOnHomePage: PropTypes.bool.isRequired,
     category: PropTypes.string.isRequired
-  }))
+  })),
+  t: PropTypes.func.isRequired
 };
