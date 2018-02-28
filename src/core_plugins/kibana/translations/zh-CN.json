@@ -1,0 +1,6 @@
+{
+  "UI-WELCOME_MESSAGE": "数据载入中……",
+  "UI-WELCOME_ERROR": "很抱歉，系统初始化存在异常，请仔细检查服务端配置。",
+
+  "KIBINA-DISCOVER": "日志检索"
+}

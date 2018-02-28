@@ -18,7 +18,7 @@
 #server.name: "your-hostname"
 
 # The URL of the Elasticsearch instance to use for all your queries.
-#elasticsearch.url: "http://localhost:9200"
+elasticsearch.url: "http://localhost:9200"
 
 # When this setting's value is true Kibana uses the hostname specified in the server.host
 # setting. When the value of this setting is false, Kibana uses the hostname of the host
@@ -102,3 +102,5 @@
 # The default locale. This locale can be used in certain circumstances to substitute any missing
 # translations.
 #i18n.defaultLocale: "en"
+i18n.defaultLocale: "zh-CN"
+# optimize.enabled: false

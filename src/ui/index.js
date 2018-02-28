@@ -13,6 +13,7 @@ import { uiSettingsMixin } from './ui_settings';
 import { fieldFormatsMixin } from './field_formats/field_formats_mixin';
 
 export default async (kbnServer, server, config) => {
+  const uiI18n = kbnServer.uiI18n = new UiI18n(config.get('i18n.defaultLocale'));
   const uiExports = kbnServer.uiExports = new UiExports({
     urlBasePath: config.get('server.basePath'),
     kibanaIndexMappings: kbnServer.mappings,
@@ -22,7 +23,6 @@ export default async (kbnServer, server, config) => {
 
   await kbnServer.mixin(fieldFormatsMixin);
 
-  const uiI18n = kbnServer.uiI18n = new UiI18n(config.get('i18n.defaultLocale'));
   uiI18n.addUiExportConsumer(uiExports);
 
   const bundlerEnv = new UiBundlerEnv(config.get('optimize.bundleDir'));

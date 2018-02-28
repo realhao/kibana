@@ -1,0 +1,14 @@
+{
+  "UI-WELCOME_MESSAGE": "加载中",
+  "UI-WELCOME_ERROR": "",
+  "Discover": "日志检索",
+  "Visualize": "可视化",
+  "Dashboard": "仪表盘",
+  "Dev Tools": "调试工具",
+  "Management": "系统配置",
+  "Timelion": "时间画像",
+  "Collapse": "收起",
+  "Expand": "展开",
+  "Collapse side bar": "收起侧边栏",
+  "Expand side bar": "展开侧边栏"
+}

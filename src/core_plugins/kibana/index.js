@@ -119,7 +119,8 @@ export default function (kibana) {
       },
 
       translations: [
-        resolve(__dirname, './translations/en.json')
+        resolve(__dirname, './translations/en.json'),
+        resolve(__dirname, './translations/zh-CN.json')
       ],
 
       mappings,
