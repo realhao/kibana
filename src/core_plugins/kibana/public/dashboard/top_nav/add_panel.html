@@ -3,7 +3,7 @@
   ng-init="mode = 'visualization'"
 >
   <h2 class="kuiLocalDropdownTitle">
-    Add Panels
+    {{ 'DASHBOARD.ADDPANEL' | translate}}
   </h2>
 
   <div class="kuiTabs">
@@ -14,7 +14,7 @@
       aria-label="List visualizations"
       data-test-subj="addVisualizationTab"
     >
-      Visualization
+      {{ 'DASHBOARD.VISUALIZATION' | translate}}
     </button>
 
     <button
@@ -24,7 +24,7 @@
       aria-label="List saved searches"
       data-test-subj="addSavedSearchTab"
     >
-      Saved Search
+      {{ 'DASHBOARD.SAVEDSEARCH' | translate}}
     </button>
   </div>
 

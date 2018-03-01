@@ -4,7 +4,15 @@ import chrome from 'ui/chrome';
 import filterTemplate from 'ui/chrome/config/filter.html';
 import intervalTemplate from 'ui/chrome/config/interval.html';
 
-export function KbnTopNavControllerProvider($compile) {
+export function KbnTopNavControllerProvider($compile, $translate) {
+  const translate = function(key, data = { key }, defaultText = '') {
+    let tKey = `TOPNAV.${key.toUpperCase()}`;
+    let transedText = $translate.instant(tKey, data);
+    if (tKey === transedText && !!defaultText) {
+      return defaultText;
+    }
+    return transedText;
+  };
   return class KbnTopNavController {
     constructor(opts = []) {
       if (opts instanceof KbnTopNavController) {
@@ -69,9 +77,9 @@ export function KbnTopNavControllerProvider($compile) {
     // apply the defaults to individual options
     _applyOptDefault(opt = {}) {
       const defaultedOpt = {
-        label: capitalize(opt.key),
+        label: translate(opt.key, null, capitalize(opt.key)),
         hasFunction: !!opt.run,
-        description: opt.run ? opt.key : `Toggle ${opt.key} view`,
+        description: opt.run ? translate(opt.key, null, opt.key) : translate(opt.key, {}, `Toggle ${opt.key} view`),
         run: (item) => this.toggle(item.key),
         ...opt
       };
@@ -94,6 +102,7 @@ export function KbnTopNavControllerProvider($compile) {
     // function is idempotent
     _render() {
       const { $scope, $element, rendered, currentKey } = this;
+      console.log(currentKey, this.templates);
       const templateToRender = currentKey && this.templates[currentKey];
 
       if (rendered) {

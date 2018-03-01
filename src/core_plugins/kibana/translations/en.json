@@ -2,5 +2,48 @@
   "UI-WELCOME_MESSAGE": "Loading Kibana",
   "UI-WELCOME_ERROR": "Kibana did not load properly. Check the server output for more information.",
 
-  "KIBINA-DISCOVER": "Discover"
+  "TIMEPICKER": "time picker",
+  "SHOWMORE": "Show More",
+  "SHOWLESS": "Show Less",
+
+  "DISCOVER": {
+    "NOFOUND": "No results found",
+    "NOFOUND-DESC": "Unfortunately I could not find any results matching your search. I tried really hard. I looked all over the place and frankly, I just couldn't find anything good. Help me, help you. Here are some ideas:",
+    "SHARD-FAILURES": "Shard Failures",
+    "DESC": "The following shard failures ocurred:",
+    "SHARD-FAIL-INDEX": "Index:",
+    "SHARD-FAIL-LABEL": "Shard:",
+    "SHARD-FAIL-REASON": "Reason:",
+
+    "EXPENDTIME": "Expand your time range",
+    "TIMEPICKNOTE": "I see you are looking at an index with a date field. It is possible your query does not match anything in the current time range, or that there is no data at all in the currently selected time range. Click the button below to open the time picker. For future reference you can open the time picker by clicking on the",
+    "TIMEPICKNOTE2": "button in the top right corner of your screen.",
+
+    "REFINE-YOUR-QUERY": "Refine your query",
+    "SEARCH-BAR-LUCENE": "The search bar at the top uses Elasticsearch's support for Lucene",
+    "SEARCH-BAR-SYNTAX": "Query String syntax",
+    "SEARCH-DESC": "Let's say we're searching web server logs that have been parsed into a few fields.",
+
+    "EXAMPLE": "Examples:",
+    "EXAMPLE1": "Find requests that contain the number 200, in any field:",
+    "EXAMPLE2": "Or we can search in a specific field. Find 200 in the status field:",
+    "EXAMPLE3": "Find all status codes between 400-499:",
+    "EXAMPLE4": "Find status codes 400-499 with the extension php:",
+    "EXAMPLE5": "Or HTML",
+
+    "RELOADSEARCH": "Reload Saved Search"
+  },
+
+  "DASHBOARD": {
+    "APPEMPTY-TITLE": "This dashboard is empty. Let&rsquo;s fill it up!",
+    "APPEMPTY-TEXT-CLICK": "Click the",
+    "APPEMPTY-TEXT-ADDVIS": "button in the menu bar above to add a visualization to the dashboard.",
+    "APPEMPTY-TEXT-IFUHAVEVIS": "If you haven't set up any visualizations yet,",
+    "APPEMPTY-TEXT-VISITVISAPP": "visit the Visualize app",
+    "APPEMPTY-TEXT-CREATEVIS": "to create your first visualization.",
+
+    "ADDPANEL": "Add Panels",
+    "VISUALIZATION": "Visualization",
+    "SAVEDSEARCH": "Saved Search"
+  }
 }

@@ -1,0 +1,27 @@
+{
+  "UI-WELCOME_MESSAGE": "数据载入中……",
+  "UI-WELCOME_ERROR": "很抱歉，系统初始化存在异常，请仔细检查服务端配置。",
+
+  "Welcome to Kibana": "欢迎使用Kibana",
+  "Data already in Elasticsearch?": "Es里已经存在数据？",
+
+  "TIMEPICKER": "选择时间",
+  "SHOWMORE": "展示更多",
+  "SHOWLESS": "收起更多",
+
+  "DISCOVER": {
+    "NOFOUND": "搜索结果为空",
+    "NOFOUND-DESC": "很抱歉经过努力没有找到匹配的搜索结果。以下是可以帮助你的建议： ",
+
+    "REFINE-YOUR-QUERY": "重新组织检索词",
+    "SEARCH-BAR-LUCENE": "顶部的搜索框使用ES对Lucene的支持",
+
+    "RELOADSEARCH": "重新加载已保存的查询"
+  },
+
+  "DASHBOARD": {
+    "APPEMPTY-TITLE": "这是一个空的仪表盘，让我们填些内容吧！"
+  }
+
+
+}

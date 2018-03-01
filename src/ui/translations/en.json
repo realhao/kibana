@@ -1,4 +1,12 @@
 {
   "UI-WELCOME_MESSAGE": "Loading",
-  "UI-WELCOME_ERROR": ""
+  "UI-WELCOME_ERROR": "",
+
+  "DOT": ".",
+
+  "ADD": "Add",
+
+  "TOPNAV": {
+    "NEW": "New"
+  }
 }

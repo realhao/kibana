@@ -1,0 +1,9 @@
+{
+  "UI-WELCOME_MESSAGE": "加載中...",
+  "UI-WELCOME_ERROR": "很抱歉，系統初始化存在異常，請仔細檢查服務端配置。",
+
+  "TIMEPICKER": "時間選擇器",
+  "SHOWMORE": "查看更多",
+  "SHOWLESS": "收起更多"
+
+}
