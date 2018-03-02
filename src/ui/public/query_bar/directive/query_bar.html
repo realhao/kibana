@@ -14,8 +14,8 @@
           disable-input-focus="queryBar.disableAutoFocus"
           kbn-typeahead-input
           ng-model="queryBar.localQuery.query"
-          placeholder="Search... (e.g. status:200 AND extension:PHP)"
-          aria-label="Search input"
+          placeholder="{{'TOPNAV.SEARCHPLD' | translate}} (e.g. status:200 AND extension:PHP)"
+          aria-label="{{'TOPNAV.SEARCHINPUT' | translate}}"
           aria-describedby="discoverLuceneSyntaxHint"
           type="text"
           class="kuiLocalSearchInput kuiLocalSearchInput--lucene"
@@ -31,7 +31,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Uses lucene query syntax
+              {{'TOPNAV.USELUCENESYNTAX' | translate}}
             </a>
           </p>
         </div>
@@ -61,7 +61,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Uses kuery syntax
+            {{'TOPNAV.USEKUERYSYNTAX' | translate}}
             </a>
           </p>
         </div>
@@ -79,7 +79,7 @@
 
       <button
         type="submit"
-        aria-label="Search"
+        aria-label="{{'TOPNAV.SEARCH' | translate}}"
         class="kuiLocalSearchButton"
         ng-disabled="queryBarForm.$invalid"
         data-test-subj="querySubmitButton"

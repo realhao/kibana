@@ -111,6 +111,7 @@ function discoverController(
   courier,
   kbnUrl,
   timefilter,
+  $translate
 ) {
 
   const Vis = Private(VisProvider);

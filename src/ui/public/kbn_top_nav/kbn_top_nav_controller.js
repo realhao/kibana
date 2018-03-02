@@ -102,7 +102,7 @@ export function KbnTopNavControllerProvider($compile, $translate) {
     // function is idempotent
     _render() {
       const { $scope, $element, rendered, currentKey } = this;
-      console.log(currentKey, this.templates);
+
       const templateToRender = currentKey && this.templates[currentKey];
 
       if (rendered) {

@@ -19,26 +19,26 @@
     ng-click="kbnTopNav.toggle('interval')"
   >
     <span ng-show="timefilter.refreshInterval.value === 0">
-      <span aria-hidden="true" class="kuiIcon fa-repeat"></span> Auto-refresh
+      <span aria-hidden="true" class="kuiIcon fa-repeat"></span> {{'TIMEPICKER.AUTOREFRESH' | translate}}
     </span>
 
     <span
       ng-show="timefilter.refreshInterval.value > 0"
-      aria-label="{{ 'Data will refresh every ' + timefilter.refreshInterval.display }}"
+      aria-label="{{ 'TIMEPICKER.AUTOREFRESHTIP' | translate:{refreshInterval:translateFn(timefilter.refreshInterval.display)} }}"
     >
-      {{ timefilter.refreshInterval.display }}
+      {{ timefilter.refreshInterval.display | translate }}
     </span>
   </button>
 
   <button
     class="kuiLocalMenuItem"
     ng-click="back()"
-    aria-label="Move backward in time"
+    aria-label="{{'TIMEPICKER.BACKTIME' | translate}}"
   >
     <span
       class="kuiIcon fa-chevron-left"
       aria-hidden="true"
-      tooltip="Move backward in time"
+      tooltip="{{'TIMEPICKER.BACKTIME' | translate}}"
     ></span>
   </button>
 
@@ -47,7 +47,7 @@
     class="kuiLocalMenuItem navbar-timepicker-time-desc"
     ng-class="{'kuiLocalMenuItem-isSelected': kbnTopNav.isCurrent('filter')}"
     ng-click="kbnTopNav.toggle('filter')"
-    aria-label="Open time range picker"
+    aria-label="{{'TIMEPICKER.OPENTIMERANGE' | translate}}"
     aria-haspopup="true"
   >
     <span aria-hidden="true" class="kuiIcon fa-clock-o"></span>
@@ -61,12 +61,12 @@
   <button
     class="kuiLocalMenuItem"
     ng-click="forward()"
-    aria-label="Move forward in time"
+    aria-label="{{'TIMEPICKER.FORWARDTIME' | translate}}"
   >
     <span
       aria-hidden="true"
       class="kuiIcon fa-chevron-right"
-      tooltip="Move forward in time"
+      tooltip="{{'TIMEPICKER.FORWARDTIME' | translate}}"
     ></span>
   </button>
 </div>

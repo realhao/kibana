@@ -10,7 +10,7 @@
             <span data-test-subj="discoverCurrentQuery" ng-bind="opts.savedSearch.lastSavedTitle"></span>
             <span
               id="reload_saved_search"
-              aria-label="Reload Saved Search"
+              aria-label="{{'DISCOVER.RELOADSEARCHTIP' | translate}}"
               tooltip="{{'DISCOVER.RELOADSEARCHTIP' | translate}}"
               ng-click="resetQuery()"
               kbn-accessible-click
@@ -18,7 +18,7 @@
             ></span>&nbsp;
           </span>
           <span data-test-subj="discoverQueryHits" class="kuiLocalBreadcrumb__emphasis">{{(hits || 0) | number:0}}</span>
-          <ng-pluralize count="hits" when="{'1':'hit', 'other':'hits'}"></ng-pluralize>
+          <ng-pluralize count="hits" when="{'1':'{{&quot;HIT&quot; | translate}}', 'other':'{{&quot;HITS&quot; | translate}}'}"></ng-pluralize>
         </h1>
       </div>
 

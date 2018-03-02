@@ -1,12 +1,47 @@
 {
+  "//__comment__head": "language file for ui common",
   "UI-WELCOME_MESSAGE": "Loading",
   "UI-WELCOME_ERROR": "",
 
+  "//__comment__common": "公共部分提取",
   "DOT": ".",
-
+  "HIT": "hit",
+  "HITS": "hits",
   "ADD": "Add",
+  "GO": "Go",
 
+  "//__comment__topNav": "公共顶部组件提取",
   "TOPNAV": {
-    "NEW": "New"
+    "NEW": "New",
+    "SAVE": "Save",
+    "OPEN": "Open",
+    "SHARE": "Share",
+    "SEARCHPLD": "Search...",
+    "SEARCHINPUT": "Search input",
+    "SEARCH": "Search",
+    "USELUCENESYNTAX": "Uses lucene query syntax",
+    "USEKUERYSYNTAX": "Uses kuery syntax"
+  },
+
+  "//__comment__timePicker": "时间选择器组件提取",
+  "TIMEPICKER": {
+    "AUTOREFRESH": "Auto-refresh",
+    "AUTOREFRESHTIP": "Data will refresh every {{refreshInterval}}",
+    "BACKTIME": "Move backward in time",
+    "OPENTIMERANGE": "Open time range picker",
+    "FORWARDTIME": "Move forward in time",
+
+    "TIMERANGE": "Time Range",
+    "QUICK": "Quick",
+    "RELATIVE": "Relative",
+    "ABSOLUTE": "Absolute",
+
+    "FROM": "From",
+    "TO": "To",
+    "GO": "Go",
+    "SETTONOW": "Set To Now",
+    "INVALIDEXPNOTE": "Invalid Expression",
+    "FROMBEFORETONOTE": "<strong>From</strong> must occur before <strong>To</strong>",
+    "ROUND": "round to the {unit}"
   }
 }

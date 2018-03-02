@@ -3,7 +3,7 @@ import { uiModules } from 'ui/modules';
 
 const module = uiModules.get('ui/timepicker');
 
-module.directive('kbnTimepickerRelativePanel', function () {
+module.directive('kbnTimepickerRelativePanel', function ($translate) {
   return {
     restrict: 'E',
     replace: true,
@@ -17,7 +17,8 @@ module.directive('kbnTimepickerRelativePanel', function () {
       units: '='
     },
     template,
-    controller: function () {
+    controller: function ($scope) {
+      $scope.translateFn = $translate.instant;
     }
   };
 });

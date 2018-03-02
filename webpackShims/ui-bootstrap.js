@@ -3,9 +3,10 @@ require('ui/angular-bootstrap');
 var uiModules = require('ui/modules').uiModules;
 var chrome = require('ui/chrome');
 
-let configI18n = $translateProvider => {
+const configI18n = $translateProvider => {
   $translateProvider.translations('default', chrome.getTranslations());
   $translateProvider.preferredLanguage('default');
+  // $translateProvider.useMessageFormatInterpolation();
   // Enable escaping of HTML
   // issue in https://angular-translate.github.io/docs/#/guide/19_security
   $translateProvider.useSanitizeValueStrategy('escape');

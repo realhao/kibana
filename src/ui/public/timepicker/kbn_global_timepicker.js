@@ -6,7 +6,7 @@ import { timeNavigation } from './time_navigation';
 
 uiModules
   .get('kibana')
-  .directive('kbnGlobalTimepicker', (timefilter, globalState, $rootScope) => {
+  .directive('kbnGlobalTimepicker', (timefilter, globalState, $rootScope, $translate) => {
     const listenForUpdates = once($scope => {
       $scope.$listen(timefilter, 'update', () => {
         globalState.time = clone(timefilter.time);
@@ -20,8 +20,10 @@ uiModules
       replace: true,
       require: '^kbnTopNav',
       link: ($scope, element, attributes, kbnTopNav) => {
-        listenForUpdates($rootScope);
 
+        $scope.translateFn = $translate.instant;
+
+        listenForUpdates($rootScope);
         $rootScope.timefilter = timefilter;
         $rootScope.toggleRefresh = () => {
           timefilter.refreshInterval.pause = !timefilter.refreshInterval.pause;

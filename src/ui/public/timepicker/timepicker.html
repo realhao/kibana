@@ -5,7 +5,7 @@
     <div ng-show="activeTab === 'filter'" role="tabpanel" class="tab-pane active">
       <div class="kbn-timepicker-title kuiVerticalRhythmSmall">
         <h2 class="kuiLocalDropdownTitle kbn-timepicker-title__text">
-          Time Range
+          {{'TIMEPICKER.TIMERANGE' | translate}}
         </h2>
 
         <div
@@ -21,7 +21,7 @@
             aria-selected="{{mode === 'quick'}}"
             kbn-accessible-click
           >
-            Quick
+            {{'TIMEPICKER.QUICK' | translate}}
           </a>
 
           <a
@@ -33,7 +33,7 @@
             aria-selected="{{mode === 'relative'}}"
             kbn-accessible-click
           >
-            Relative
+            {{'TIMEPICKER.RELATIVE' | translate}}
           </a>
 
           <a
@@ -45,7 +45,7 @@
             aria-selected="{{mode === 'absolute'}}"
             kbn-accessible-click
           >
-            Absolute
+            {{'TIMEPICKER.ABSOLUTE' | translate}}
           </a>
         </div>
       </div>

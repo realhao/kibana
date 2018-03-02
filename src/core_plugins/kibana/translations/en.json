@@ -1,12 +1,15 @@
 {
+  "//__comment__head": "language file for kibana plugin",
   "UI-WELCOME_MESSAGE": "Loading Kibana",
   "UI-WELCOME_ERROR": "Kibana did not load properly. Check the server output for more information.",
 
-  "TIMEPICKER": "time picker",
+  "TIMEPICKERNAME": "time picker",
   "SHOWMORE": "Show More",
   "SHOWLESS": "Show Less",
 
   "DISCOVER": {
+    "RELOADSEARCHTIP": "Reload Saved Search",
+
     "NOFOUND": "No results found",
     "NOFOUND-DESC": "Unfortunately I could not find any results matching your search. I tried really hard. I looked all over the place and frankly, I just couldn't find anything good. Help me, help you. Here are some ideas:",
     "SHARD-FAILURES": "Shard Failures",
@@ -29,9 +32,7 @@
     "EXAMPLE2": "Or we can search in a specific field. Find 200 in the status field:",
     "EXAMPLE3": "Find all status codes between 400-499:",
     "EXAMPLE4": "Find status codes 400-499 with the extension php:",
-    "EXAMPLE5": "Or HTML",
-
-    "RELOADSEARCH": "Reload Saved Search"
+    "EXAMPLE5": "Or HTML"
   },
 
   "DASHBOARD": {
