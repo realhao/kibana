@@ -3,7 +3,9 @@
   ng-submit="opts.save()"
 >
   <h2 class="kuiLocalDropdownTitle">
-    Save {{opts.displayName}}
+    {{ 'DASHBOARD.SAVETITLE' | translate:{
+      displayName: (opts.displayName | i18nT:'DASHBOARD')
+    } }}
   </h2>
 
   <div class="kuiLocalDropdownSection">
@@ -12,7 +14,7 @@
         class="kuiLocalDropdownHeader__label"
         for="saveDashboardTitle"
       >
-        Title
+        {{ 'TITLE' | translate }}
       </label>
     </div>
 
@@ -33,7 +35,7 @@
         class="kuiLocalDropdownHeader__label"
         for="saveDashboardDescription"
       >
-        Description
+        {{ 'DESCRIPTION' | translate }}
       </label>
     </div>
 
@@ -63,12 +65,14 @@
       >
 
       <span class="kuiCheckBoxLabel__text">
-        Store time with {{opts.displayName}}
+        {{ 'DASHBOARD.STORETIMEWITHDASHBOARD' | translate:{
+          displayName: (opts.displayName | i18nT:'DASHBOARD')
+        } }}
       </span>
     </label>
 
     <div class="kuiLocalDropdownFormNote kuiVerticalRhythmSmall">
-      This changes the time filter to the currently selected time each time this dashboard is loaded.
+      {{ 'DASHBOARD.STORETIMEWITHDASHBOARDNOTE' | translate }}
     </div>
   </div>
 
@@ -79,6 +83,6 @@
     class="kuiButton kuiButton--primary kuiVerticalRhythm"
     aria-label="Save dashboard"
   >
-    Save
+    {{ 'SAVE' | translate }}
   </button>
 </form>

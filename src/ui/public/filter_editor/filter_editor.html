@@ -1,9 +1,9 @@
 <div class="filterEditor kuiModal">
   <div class="kuiModalHeader">
     <div class="kuiModalHeader__title">
-      <span ng-show="filterEditor.filter.meta.isNew">Add</span>
-      <span ng-hide="filterEditor.filter.meta.isNew">Edit</span>
-      filter
+      <span ng-show="filterEditor.filter.meta.isNew">{{ 'FILTERBAR.ADD' | translate }}</span>
+      <span ng-hide="filterEditor.filter.meta.isNew">{{ 'FILTERBAR.EDIT' | translate }}</span>
+      {{ 'FILTERBAR.filter' | translate }}
     </div>
 
     <button
@@ -18,7 +18,7 @@
     <div class="kuiVerticalRhythm">
       <div class="kuiVerticalRhythmSmall filterEditor__labelBar">
         <label class="kuiLabel">
-          Filter
+          {{ 'FILTERBAR.Filter' | translate }}
         </label>
 
         <div>
@@ -28,11 +28,11 @@
             kbn-accessible-click
           >
             <span ng-if="filterEditor.isEditingQueryDsl">
-              Search filter values
+              {{ 'FILTERBAR.SEARCHFILTERVALUES' | translate }}
             </span>
 
             <span ng-if="!filterEditor.isEditingQueryDsl">
-              Edit Query DSL
+              {{ 'FILTERBAR.EDITQUERYDSL' | translate }}
             </span>
           </a>
         </div>
@@ -83,7 +83,7 @@
         ></filter-query-dsl-editor>
 
         <p class="kuiText kuiVerticalRhythmSmall">
-          Filters are built using the <a class="kuiLink" target="_blank" rel="noopener noreferrer" documentation-href="query.queryDsl">Elasticsearch Query DSL</a>.
+          {{ 'FILTERBAR.FILTERBUILTIN' | translate }} <a class="kuiLink" target="_blank" rel="noopener noreferrer" documentation-href="query.queryDsl">{{ 'FILTERBAR.ESQUERYDSL' | translate }}</a>.
         </p>
       </div>
     </div>
@@ -95,7 +95,7 @@
           class="kuiLabel"
           for="filterEditorLabelInput"
         >
-          Label
+          {{ 'FILTERBAR.LABEL' | translate }}
         </label>
       </div>
 
@@ -129,7 +129,7 @@
         class="kuiButton kuiButton--basic"
         ng-click="filterEditor.onCancel()"
       >
-        Cancel
+        {{ 'CANCEL' | translate }}
       </button>
       <button
         class="kuiButton kuiButton--primary"
@@ -137,7 +137,7 @@
         ng-click="filterEditor.save()"
         data-test-subj="saveFilter"
       >
-        Save
+        {{ 'SAVE' | translate }}
       </button>
     </div>
   </div>

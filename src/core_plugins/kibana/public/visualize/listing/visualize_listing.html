@@ -9,7 +9,7 @@
       role="heading"
       aria-level="1"
     >
-      Visualize
+      {{ 'Visualize' | translate }}
     </div>
   </div>
 </kbn-top-nav>
@@ -21,7 +21,8 @@
     <div class="kuiInfoPanel kuiInfoPanel--warning">
       <div class="kuiInfoPanelBody">
         <div class="kuiInfoPanelBody__message">
-          You have {{ listingController.totalItems }} visualizations, but your "listingLimit" setting prevents the table below from displaying more than {{ listingController.listingLimit }}. You can change this setting under <a kbn-href="#/management/kibana/settings" class="kuiLink">Advanced Settings</a>.
+          {{ 'VISUALIZE.LIMITERROR' | translate:listingController }}
+          <a kbn-href="#/management/kibana/settings" class="kuiLink">{{ 'ADVANCEDSETTINGS' | translate }}</a>{{ 'DOT' | translate }}
         </div>
       </div>
     </div>
@@ -30,6 +31,7 @@
   <visualize-listing-table
     fetch-items="listingController.fetchItems"
     delete-selected-items="listingController.deleteSelectedItems"
+    t="t"
   ></visualize-listing-table>
 
 </div>

@@ -35,13 +35,13 @@ export class ExitFullScreenButton extends PureComponent {
       >
         <KuiButton
           type="hollow"
-          aria-label="Exit full screen mode"
+          aria-label="{this.props.t('EXITFULLSCREENMODE')}"
           className="exitFullScreenMode"
           onClick={this.props.onExitFullScreenMode}
         >
           <span className="exitFullScreenModeLogo" data-test-subj="exitFullScreenModeLogo"/>
           <span className="exitFullScreenModeText" data-test-subj="exitFullScreenModeText">
-            Exit full screen
+            {this.props.t('EXITFULLSCREEN')}
             <span className="kuiIcon fa fa-angle-left"/>
           </span>
         </KuiButton>
@@ -52,5 +52,6 @@ export class ExitFullScreenButton extends PureComponent {
 
 ExitFullScreenButton.propTypes = {
   onExitFullScreenMode: PropTypes.func.isRequired,
+  t: PropTypes.func
 };
 

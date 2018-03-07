@@ -28,7 +28,8 @@ export function VisualizeListingController($injector) {
     return visualizationService.find(filter, config.get('savedObjects:listingLimit'))
       .then(result => {
         this.totalItems = result.total;
-        this.showLimitError = result.total > config.get('savedObjects:listingLimit');
+        // this.showLimitError = result.total > config.get('savedObjects:listingLimit');
+        this.showLimitError = true;
         this.listingLimit = config.get('savedObjects:listingLimit');
         return result.hits.filter(result => (isLabsEnabled || result.type.stage !== 'lab'));
       });

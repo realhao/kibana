@@ -13,6 +13,7 @@ export function DashboardViewport({
   useMargins,
   isFullScreenMode,
   onExitFullScreenMode,
+  t
 }) {
   return (
     <div
@@ -22,7 +23,7 @@ export function DashboardViewport({
       data-description={description}
       className={useMargins ? 'dashboard-viewport-with-margins' : 'dashboard-viewport'}
     >
-      { isFullScreenMode && <ExitFullScreenButton onExitFullScreenMode={onExitFullScreenMode} /> }
+      { isFullScreenMode && <ExitFullScreenButton t={t} onExitFullScreenMode={onExitFullScreenMode} /> }
       <DashboardGrid
         getEmbeddableFactory={getEmbeddableFactory}
         getContainerApi={getContainerApi}
@@ -40,4 +41,5 @@ DashboardViewport.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   useMargins: PropTypes.bool.isRequired,
+  t: PropTypes.func
 };

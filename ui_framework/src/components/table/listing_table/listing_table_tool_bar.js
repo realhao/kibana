@@ -7,7 +7,7 @@ import {
   KuiToolBarSection,
 } from '../../';
 
-export function KuiListingTableToolBar({ pager, actions, onFilter, filter }) {
+export function KuiListingTableToolBar({ pager, actions, onFilter, filter, searchpld }) {
   let actionsSection;
 
   if (actions) {
@@ -30,7 +30,7 @@ export function KuiListingTableToolBar({ pager, actions, onFilter, filter }) {
 
   return (
     <KuiToolBar>
-      <KuiToolBarSearchBox onFilter={onFilter} filter={filter} />
+      <KuiToolBarSearchBox onFilter={onFilter} filter={filter} placeholder={searchpld} />
       {actionsSection}
       {pagerSection}
     </KuiToolBar>
@@ -42,4 +42,5 @@ KuiListingTableToolBar.propTypes = {
   onFilter: PropTypes.func.isRequired,
   pager: PropTypes.node,
   actions: PropTypes.node,
+  searchpld: PropTypes.string
 };

@@ -6,6 +6,17 @@
   "TIMEPICKERNAME": "time picker",
   "SHOWMORE": "Show More",
   "SHOWLESS": "Show Less",
+  "TITLE": "Title",
+  "DESCRIPTION": "Description",
+  "NAME": "Name",
+  "ADVANCEDSETTINGS": "Advanced Settings",
+  "TYPE": "Type",
+  "SEARCHPLD": "Search...",
+
+  "NOTIFY": {
+    "VISADDEDTODASHBOARD": "Visualization successfully added to your dashboard",
+    "SEARCHADDEDTODASHBOARD": "Search successfully added to your dashboard"
+  },
 
   "DISCOVER": {
     "RELOADSEARCHTIP": "Reload Saved Search",
@@ -17,11 +28,36 @@
     "SHARD-FAIL-INDEX": "Index:",
     "SHARD-FAIL-LABEL": "Shard:",
     "SHARD-FAIL-REASON": "Reason:",
+    "SEARCHING": "Searching",
+    "SKIPTOBOTTOM": "Skip to bottom",
+    "HISTOGRAMOFFOUND": "Histogram of found documents",
+    "CHANGETIMETIP": "To change the time, click the clock icon in the navigation bar",
+    "SCALEDTO": "Scaled to {{description}}",
+    "SELECTEDFIELDS": "Selected Fields",
+    "AVAILABLEFIELDS": "Available Fields",
+    "AGGREGATABLE": "Aggregatable",
+    "SEARCHABLE": "Searchable",
+    "TYPE": "Type",
+    "FIELDNAME": "Field name",
+    "HIDEMISSINGFIELDS": "Hide Missing Fields",
+    "RESETFILTERS": "Reset Filters",
+    "POPULAR": "Popular",
+    "FIELD-TOP5": "Top 5 values in",
+    "FIELD-RECORDS": "records",
+    "FIELD-ERROR-GEO": "Analysis is not available for geo fields.",
+    "FIELD-ERROR-NORESULTS": "This field is present in your elasticsearch mapping but not in any documents in the search results. You may still be able to visualize or search on it.",
+    "VISUALIZE": "Visualize",
+    "WARNINGSPLURAL": "{num, plural, =0{warning} other{warnings}}",
+    "REMOVE": "remove",
+    "ADD": "add",
+    "SCALEDINFO": "This interval creates {{scale > 1 ? 'buckets that are too large' : 'too many buckets' }} to show in the selected time range, so it has been scaled to {{ description }}",
+    "BACKTOTOP": "Back to top.",
+    "SAMPLESIZEINFO": "These are the first {{sampleSize}} documents matching your search, refine your search to see others.",
+    "EMPTYSTRING": "Empty string",
 
     "EXPENDTIME": "Expand your time range",
     "TIMEPICKNOTE": "I see you are looking at an index with a date field. It is possible your query does not match anything in the current time range, or that there is no data at all in the currently selected time range. Click the button below to open the time picker. For future reference you can open the time picker by clicking on the",
     "TIMEPICKNOTE2": "button in the top right corner of your screen.",
-
     "REFINE-YOUR-QUERY": "Refine your query",
     "SEARCH-BAR-LUCENE": "The search bar at the top uses Elasticsearch's support for Lucene",
     "SEARCH-BAR-SYNTAX": "Query String syntax",
@@ -36,6 +72,29 @@
   },
 
   "DASHBOARD": {
+    "TITLE": "Dashboard",
+    "LIMITERROR": "You have {{ totalItems }} dashboards, but your \"listingLimit\" setting prevents the table below from displaying more than {{ listingLimit }}. You can change this setting under",
+    "ADVANCEDSETTINGS": "@:ADVANCEDSETTINGS",
+    "SEARCH": "@:SEARCHPLD",
+    "FILTERDASHBOARDS": "Filter dashboards",
+    "DELSEL": "Delete selected dashboards",
+    "CREATEDASHBOARD": "Create new dashboard",
+    "NODASHBOARDMATCHED": "No dashboards matched your search.",
+    "LOOKSUDONTHAVEANYDASHBOARDS": "Looks like you don&rsquo;t have any dashboards.",
+    "LETSCREATESOME": "Let&rsquo;s create some!",
+    "CRATEADASHBOARD": "Create a dashboard",
+    "NAMEDESCEND": "Sort name descending",
+    "NAMEASCEND": "Sort name ascending",
+    "DESELECTALL": "Deselect all rows",
+    "SELECTALL": "Select all rows",
+    "NAME": "Name",
+    "DESCRIPTION": "Description",
+    "DESCRIPTIONDESCEND": "Sort description descending",
+    "DESCRIPTIONASCEND": "Sort description ascending",
+    "DESELECTROW": "Deselect row",
+    "SELECTROW": "Select row",
+    "SELECTED": "{{num}} selected",
+
     "APPEMPTY-TITLE": "This dashboard is empty. Let&rsquo;s fill it up!",
     "APPEMPTY-TEXT-CLICK": "Click the",
     "APPEMPTY-TEXT-ADDVIS": "button in the menu bar above to add a visualization to the dashboard.",
@@ -43,8 +102,33 @@
     "APPEMPTY-TEXT-VISITVISAPP": "visit the Visualize app",
     "APPEMPTY-TEXT-CREATEVIS": "to create your first visualization.",
 
+    "VIEWHELP-TITLE": "This dashboard is empty. Let&rsquo;s fill it up!",
+    "VIEWHELP-TEXT1": "Click the",
+    "VIEWHELP-Edit": "Edit",
+    "VIEWHELP-TEXT2": "button in the menu bar above to start working on your new dashboard.",
+
     "ADDPANEL": "Add Panels",
     "VISUALIZATION": "Visualization",
-    "SAVEDSEARCH": "Saved Search"
+    "SAVEDSEARCH": "Saved Search",
+
+    "CONFIRMBUTTONTEXT": "Yes, lose changes",
+    "CANCELBUTTONTEXT": "No, keep working",
+    "UNSAVEDWARNHASFILTER": "Are you sure you want to cancel and lose changes, including changes made to your {{changedFilterList}}?",
+    "UNSAVEDWARN": "Are you sure you want to cancel and lose changes?",
+
+    "SAVETITLE": "Save {{displayName}}",
+    "STORETIMEWITHDASHBOARD": "Store time with {{displayName}}",
+    "STORETIMEWITHDASHBOARDNOTE": "This changes the time filter to the currently selected time each time this dashboard is loaded.",
+
+    "OPTIONS": "Options",
+    "USEDARKTHEME": "Use dark theme",
+    "USEMARGINSBETWEENPANELS": "Use margins between panels",
+    "HIDEALLPANELTITLES": "Hide all panel titles"
+  },
+
+  "VISUALIZE": {
+    "LIMITERROR": "You have {{ totalItems }} visualizations, but your \"listingLimit\" setting prevents the table below from displaying more than {{ listingLimit }}. You can change this setting under ",
+    "DELETESELECTEDITEMSCONFIRM": "Are you sure you want to delete the selected visualizations? This action is irreversible!",
+    "SEARCHPLD": "@:SEARCHPLD"
   }
 }

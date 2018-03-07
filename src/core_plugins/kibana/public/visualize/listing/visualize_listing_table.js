@@ -133,13 +133,13 @@ export class VisualizeListingTable extends Component {
   renderHeader() {
     return [
       {
-        content: 'Title',
+        content: this.props.t('Title', ''),
         onSort: this.sortByTitle,
         isSorted: this.state.sortedColumn === 'title',
         isSortAscending: this.sortableProperties.isAscendingByName('title'),
       },
       {
-        content: 'Type',
+        content: this.props.t('Type', ''),
         onSort: this.sortByType,
         isSorted: this.state.sortedColumn === 'type',
         isSortAscending: this.sortableProperties.isAscendingByName('type'),
@@ -185,13 +185,14 @@ export class VisualizeListingTable extends Component {
     return (
       <KuiModalOverlay>
         <KuiConfirmModal
-          message="Are you sure you want to delete the selected visualizations? This action is irreversible!"
-          title="Warning"
+          title={this.props.t('Warning', '')}
           onCancel={this.closeModal}
           onConfirm={this.deleteSelectedItems}
-          cancelButtonText="Cancel"
-          confirmButtonText="Delete"
-        />
+          cancelButtonText={this.props.t('Cancel', '')}
+          confirmButtonText={this.props.t('Delete', '')}
+        >
+          {this.props.t('VISUALIZE.DELETESELECTEDITEMSCONFIRM')}
+        </KuiConfirmModal>
       </KuiModalOverlay>
     );
   }
@@ -259,6 +260,7 @@ export class VisualizeListingTable extends Component {
         <KuiListingTable
           pager={this.renderPager()}
           toolBarActions={this.renderToolBarActions()}
+          toolBarPlaceholder={this.props.t('VISUALIZE.SEARCHPLD')}
           selectedRowIds={this.state.selectedRowIds}
           rows={this.createRows()}
           header={this.renderHeader()}
@@ -275,4 +277,5 @@ export class VisualizeListingTable extends Component {
 VisualizeListingTable.propTypes = {
   deleteSelectedItems: PropTypes.func,
   fetchItems: PropTypes.func,
+  t: PropTypes.func
 };

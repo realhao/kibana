@@ -19,12 +19,12 @@ export function createStringList(list) {
  * @param changedFilters {Array.<string>} An optional list of filter types that have changed.
  * @returns {string} A warning message to display to the user that they are going to lose changes.
  */
-export function getUnsavedChangesWarningMessage(changedFilters) {
+export function getUnsavedChangesWarningMessage(changedFilters, translate) {
   const changedFilterList = createStringList(changedFilters);
 
-  return changedFilterList ?
-    `Are you sure you want to cancel and lose changes, including changes made to your ${changedFilterList}?` :
-    `Are you sure you want to cancel and lose changes?`;
+  return changedFilterList ? translate('DASHBOARD.UNSAVEDWARNHASFILTER', {
+    changedFilterList: `${changedFilterList}`
+  }) : translate('DASHBOARD.UNSAVEDWARN');
 }
 
 /**

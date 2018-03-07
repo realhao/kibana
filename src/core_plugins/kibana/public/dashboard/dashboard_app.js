@@ -53,7 +53,10 @@ app.directive('dashboardApp', function ($injector) {
   return {
     restrict: 'E',
     controllerAs: 'dashboardApp',
-    controller: function ($scope, $rootScope, $route, $routeParams, $location, getAppState, $compile, dashboardConfig) {
+    controller: function ($scope, $rootScope, $route, $routeParams, $location, getAppState, $compile, dashboardConfig, $translate) {
+      const translate = chrome.getReactTranslateFun($translate.instant);
+      $scope.t = translate;
+
       const filterManager = Private(FilterManagerProvider);
       const filterBar = Private(FilterBarQueryFilterProvider);
       const docTitle = Private(DocTitleProvider);
@@ -174,13 +177,13 @@ app.directive('dashboardApp', function ($injector) {
       $scope.addVis = function (hit, showToast = true) {
         dashboardStateManager.addNewPanel(hit.id, 'visualization');
         if (showToast) {
-          notify.info(`Visualization successfully added to your dashboard`);
+          notify.info(translate('NOTIFY.VISADDEDTODASHBOARD'));
         }
       };
 
       $scope.addSearch = function (hit) {
         dashboardStateManager.addNewPanel(hit.id, 'search');
-        notify.info(`Search successfully added to your dashboard`);
+        notify.info(translate('NOTIFY.SEARCHADDEDTODASHBOARD'));
       };
       $scope.$watch('model.hidePanelTitles', () => {
         dashboardStateManager.setHidePanelTitles($scope.model.hidePanelTitles);
@@ -242,12 +245,12 @@ app.directive('dashboardApp', function ($injector) {
         }
 
         confirmModal(
-          getUnsavedChangesWarningMessage(dashboardStateManager.getChangedFilterTypes(timefilter)),
+          getUnsavedChangesWarningMessage(dashboardStateManager.getChangedFilterTypes(timefilter), translate),
           {
             onConfirm: revertChangesAndExitEditMode,
             onCancel: _.noop,
-            confirmButtonText: 'Yes, lose changes',
-            cancelButtonText: 'No, keep working',
+            confirmButtonText: translate('DASHBOARD.CONFIRMBUTTONTEXT'),
+            cancelButtonText: translate('DASHBOARD.CANCELBUTTONTEXT'),
             defaultFocusedButton: ConfirmationButtonTypes.CANCEL
           }
         );

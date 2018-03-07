@@ -11,7 +11,7 @@
           input-focus
           disable-input-focus="disableAutoFocus"
           ng-model="filter"
-          ng-attr-placeholder="{{ finder.properties.nouns | label }} Filter..."
+          ng-attr-placeholder="{{ 'SAVEDOBJECTFINDER.PLD' | translate:{type: (finder.properties.nouns | label | i18nT:'SAVEDOBJECTFINDER')} }}"
           ng-keydown="finder.filterKeyDown($event)"
           name="filter"
           type="text"
@@ -23,7 +23,11 @@
 
     <div class="kuiBarSection">
       <p class="kuiText kuiSubduedText">
-        {{ pageFirstItem }}-{{ pageLastItem }} of {{ finder.hitCount }}
+        {{ 'SAVEDOBJECTFINDER.PAGE' | translate:{
+          pageFirstItem,
+          pageLastItem,
+          hitCount: finder.hitCount
+        } }}
       </p>
 
       <div class="kuiButtonGroup">
@@ -33,7 +37,9 @@
           ng-click="onAddNew()"
           data-test-subj="addNewSavedObjectLink"
         >
-          Add new {{ finder.properties.noun }}
+          {{ 'SAVEDOBJECTFINDER.ADDNEW' | translate:{
+            noun: (finder.properties.noun | i18nT:'SAVEDOBJECTFINDER')
+          } }}
         </button>
 
         <button
@@ -41,7 +47,9 @@
           ng-if="!useLocalManagement"
           ng-click="finder.manageObjects(finder.properties.name)"
         >
-          Manage {{ finder.properties.nouns }}
+          {{ 'SAVEDOBJECTFINDER.MANAGE' | translate:{
+            nouns: (finder.properties.nouns | i18nT:'SAVEDOBJECTFINDER')
+          } }}
         </button>
       </div>
     </div>
@@ -59,7 +67,7 @@
     aria-live="assertive"
   >
     <span class="kuiScreenReaderOnly">Sort by</span>
-    Name
+    {{ 'NAME' | translate }}
     <span
       class="fa"
       ng-class="finder.isAscending ? 'fa-caret-up' : 'fa-caret-down'">
@@ -86,7 +94,7 @@
     <li
       class="list-group-item list-group-no-results"
       ng-if="finder.hits.length === 0">
-      <p ng-bind="'No matching ' + finder.properties.nouns + ' found.'"></p>
+      <p ng-bind="'SAVEDOBJECTFINDER.NOMATCH' | translate:{nouns:( finder.properties.nouns | i18nT:'SAVEDOBJECTFINDER' )}"></p>
     </li>
   </ul>
 </paginate>

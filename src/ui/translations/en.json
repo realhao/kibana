@@ -1,4 +1,5 @@
 {
+  "//__comment: by realhao1988@vip.qq.com": "",
   "//__comment__head": "language file for ui common",
   "UI-WELCOME_MESSAGE": "Loading",
   "UI-WELCOME_ERROR": "",
@@ -8,7 +9,16 @@
   "HIT": "hit",
   "HITS": "hits",
   "ADD": "Add",
+  "EDIT": "Edit",
   "GO": "Go",
+  "SAVE": "Save",
+  "CANCEL": "Cancel",
+  "EXITFULLSCREEN": "Exit full screen",
+  "EXITFULLSCREENMODE": "Exit full screen mode",
+  "COPY": "Copy",
+  "LINK": "Link",
+  "Delete": "Delete",
+  "Warning": "Warning",
 
   "//__comment__topNav": "公共顶部组件提取",
   "TOPNAV": {
@@ -20,7 +30,14 @@
     "SEARCHINPUT": "Search input",
     "SEARCH": "Search",
     "USELUCENESYNTAX": "Uses lucene query syntax",
-    "USEKUERYSYNTAX": "Uses kuery syntax"
+    "USEKUERYSYNTAX": "Uses kuery syntax",
+    "FULLSCREEN": "Full screen",
+    "CLONE": "@:CPOY",
+    "EDIT": "@:EDIT",
+    "CANCEL": "@:CANCEL",
+    "ADD": "@:ADD",
+    "OPTIONS": "Options",
+    "REFRESH": "Refresh"
   },
 
   "//__comment__timePicker": "时间选择器组件提取",
@@ -43,5 +60,74 @@
     "INVALIDEXPNOTE": "Invalid Expression",
     "FROMBEFORETONOTE": "<strong>From</strong> must occur before <strong>To</strong>",
     "ROUND": "round to the {unit}"
+  },
+
+  "//__comment__filterBar": "过滤器提取",
+  "FILTERBAR": {
+    "APPLYFILTERS": "Apply these filters?",
+    "CHANGETIMETO": "Change time to:",
+    "APPLYNOW": "Apply Now",
+    "ADDFILTER": "Add a filter",
+    "ACTIONS": "Actions",
+    "ALLFILTERS": "All filters:",
+    "ENABLE": "Enable",
+    "DISABLE": "Disable",
+    "PIN": "Pin",
+    "UNPIN": "Unpin",
+    "INVERT": "Invert",
+    "TOGGLE": "Toggle",
+    "REMOVE": "Remove",
+
+    "ADD": "Add",
+    "EDIT": "Edit",
+    "filter": "filter",
+    "Filter": "Filter",
+    "SEARCHFILTERVALUES": "Search filter values",
+    "EDITQUERYDSL": "Edit Query DSL",
+    "FILTERBUILTIN": "Filters are built using the",
+    "ESQUERYDSL": "Elasticsearch Query DSL",
+    "LABEL": "Label",
+    "ACCEPTEDDATEFORMATS": "Accepted date formats",
+    "VALUES": "Values...",
+    "FROM": "From...",
+    "TO": "To..."
+  },
+
+  "VISUALIZATION": {
+    "NORESULTS": "No results found",
+    "NOTACCESSTIP": "{{title}} visualization, not yet accessible"
+  },
+
+  "TOOLBARPAGERTEXT": "{{startItem}}-{{endItem}} of {{totalItems}}",
+
+  "SHARE": {
+    "TITLE": "Share saved {{objectType}}",
+    "DROPDOWNHELPTEXT": "You can share this URL with people to let them load the most recent saved version of this {{objectType}}.",
+    "DROPDOWNWARNING": "Please save this {{objectType}} to enable this sharing option.",
+    "EMBEDDEDIFRAME": "Embedded iframe",
+    "COPY": "@:COPY",
+    "DROPDOWNFORMNOTE": "Add to your HTML source. Note that all clients must be able to access Kibana.",
+    "LINK": "@:LINK",
+    "SHARESNAPSHOT": "Share Snapshot",
+    "DROPDOWNHELPTEXT2": "Snapshot URLs encode the current state of the {{objectType}} in the URL itself. Edits to the saved {{objectType}} won't be visible via this URL.",
+    "SHORTURL": "Short URL",
+    "LONGURL": "Long URL",
+    "DROPDOWNFORMNOTE2": "Add to your HTML source. Note that all clients must be able to access Kibana.",
+    "DROPDOWNFORMNOTE3": "We recommend sharing shortened snapshot URLs for maximum compatibility. Internet Explorer has URL length restrictions, and some wiki and markup parsers don't do well with the full-length version of the snapshot URL, but the short URL should work great."
+  },
+
+  "SAVEDOBJECTSAVEASCHECKBOX": {
+    "PREVIOUSCHANGENAMECOPYNOTE": "In previous versions of Kibana, changing the name of a {{displayName}} would make a copy with the new name. Use the 'Save as a new {{displayName}}' checkbox to do this now.",
+    "SAVEASNEW": "Save as a new {{displayName}}"
+  },
+
+  "SAVEDOBJECTFINDER": {
+    "//__comment_for_type": "no need for en",
+    "PLD": "{{type}} Filter...",
+    "PAGE": "{{ pageFirstItem }}-{{ pageLastItem }} of {{ hitCount }}",
+    "ADDNEW": "Add new {{ noun }}",
+    "MANAGE": "Manage {{ nouns }}",
+    "NOMATCH": "No matching {{ nouns }} found."
   }
+
 }

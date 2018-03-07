@@ -6,6 +6,16 @@
   "TIMEPICKERNAME": "选择时间",
   "SHOWMORE": "展示更多",
   "SHOWLESS": "收起更多",
+  "TITLE": "标题",
+  "DESCRIPTION": "描述",
+  "Name": "名称",
+  "TYPE": "类型",
+  "SEARCHPLD": "查询...",
+
+  "NOTIFY": {
+    "VISADDEDTODASHBOARD": "Visualization successfully added to your dashboard",
+    "SEARCHADDEDTODASHBOARD": "Search successfully added to your dashboard"
+  },
 
   "DISCOVER": {
     "RELOADSEARCHTIP": "重新加载已保存的查询",
@@ -17,6 +27,32 @@
     "SHARD-FAIL-INDEX": "Index:",
     "SHARD-FAIL-LABEL": "Shard:",
     "SHARD-FAIL-REASON": "Reason:",
+    "SEARCHING": "查询中...",
+    "SKIPTOBOTTOM": "跳到底部",
+    "HISTOGRAMOFFOUND": "Histogram of found documents",
+    "CHANGETIMETIP": "需要修改时间，请点击导航里的闹钟图标",
+    "SCALEDTO": "已缩放至{{description}}",
+    "SELECTEDFIELDS": "已选列",
+    "AVAILABLEFIELDS": "可用列",
+    "AGGREGATABLE": "可聚合",
+    "SEARCHABLE": "可查找",
+    "TYPE": "类型",
+    "FIELDNAME": "列名",
+    "HIDEMISSINGFIELDS": "隐藏丢失的列",
+    "RESETFILTERS": "重置过滤条件",
+    "POPULAR": "热门",
+    "FIELD-TOP5": "前5个值",
+    "FIELD-RECORDS": "记录",
+    "FIELD-ERROR-GEO": "Analysis is not available for geo fields.",
+    "FIELD-ERROR-NORESULTS": "This field is present in your elasticsearch mapping but not in any documents in the search results. You may still be able to visualize or search on it.",
+    "VISUALIZE": "可视化",
+    "WARNINGSPLURAL": "{num, plural, =0{报警} other{报警}}",
+    "REMOVE": "删除",
+    "ADD": "添加",
+    "SCALEDINFO": "This interval creates {{scale > 1 ? 'buckets that are too large' : 'too many buckets' }} to show in the selected time range, so it has been scaled to {{ description }}",
+    "BACKTOTOP": "Back to top.",
+    "SAMPLESIZEINFO": "These are the first {{sampleSize}} documents matching your search, refine your search to see others.",
+    "EMPTYSTRING": "空字符",
 
     "EXPENDTIME": "Expand your time range",
     "TIMEPICKNOTE": "I see you are looking at an index with a date field. It is possible your query does not match anything in the current time range, or that there is no data at all in the currently selected time range. Click the button below to open the time picker. For future reference you can open the time picker by clicking on the",
@@ -35,6 +71,29 @@
   },
 
   "DASHBOARD": {
+    "TITLE": "仪表盘",
+    "LIMITERROR": "You have {{ totalItems }} dashboards, but your \"listingLimit\" setting prevents the table below from displaying more than {{ listingLimit }}. You can change this setting under",
+    "ADVANCEDSETTINGS": "高级配置",
+    "SEARCH": "@:SEARCHPLD",
+    "FILTERDASHBOARDS": "过滤仪表盘",
+    "DELSEL": "删除已选中仪表盘",
+    "CREATEDASHBOARD": "创建新的仪表盘",
+    "NODASHBOARDMATCHED": "未找你搜索的仪表盘。",
+    "LOOKSUDONTHAVEANYDASHBOARDS": "看样子你还未创建仪表盘。",
+    "LETSCREATESOME": "让我们创建一个吧！",
+    "CRATEADASHBOARD": "创建仪表盘",
+    "NAMEDESCEND": "按名称倒序排列",
+    "NAMEASCEND": "按名称正序排列",
+    "DESELECTALL": "取消全选",
+    "SELECTALL": "全选",
+    "NAME": "名称",
+    "DESCRIPTION": "描述",
+    "DESCRIPTIONDESCEND": "按描述倒序排列",
+    "DESCRIPTIONASCEND": "按描述正序排列",
+    "DESELECTROW": "取消选择该行",
+    "SELECTROW": "选择该行",
+    "SELECTED": "已选{{num}}",
+
     "APPEMPTY-TITLE": "这是一个空的仪表盘，让我们填些内容吧！",
     "APPEMPTY-TEXT-CLICK": "Click the",
     "APPEMPTY-TEXT-ADDVIS": "button in the menu bar above to add a visualization to the dashboard.",
@@ -42,9 +101,36 @@
     "APPEMPTY-TEXT-VISITVISAPP": "visit the Visualize app",
     "APPEMPTY-TEXT-CREATEVIS": "to create your first visualization.",
 
-    "ADDPANEL": "Add Panels",
-    "VISUALIZATION": "Visualization",
-    "SAVEDSEARCH": "Saved Search"
+    "VIEWHELP-TITLE": "This dashboard is empty. Let&rsquo;s fill it up!",
+    "VIEWHELP-TEXT1": "Click the",
+    "VIEWHELP-Edit": "Edit",
+    "VIEWHELP-TEXT2": "button in the menu bar above to start working on your new dashboard.",
+
+    "ADDPANEL": "添加面板",
+    "VISUALIZATION": "可视化",
+    "SAVEDSEARCH": "已保存的查询",
+
+    "CONFIRMBUTTONTEXT": "是，丢掉修改",
+    "CANCELBUTTONTEXT": "不，继续工作",
+    "UNSAVEDWARNHASFILTER": "你确定要取消并丢掉包括{{changedFilterList}}所有修改吗？",
+    "UNSAVEDWARN": "你确定要取消并丢掉所有修改吗？",
+
+    "SAVETITLE": "保存{{displayName}}",
+    "STORETIMEWITHDASHBOARD": "Store time with {{displayName}}",
+    "STORETIMEWITHDASHBOARDNOTE": "This changes the time filter to the currently selected time each time this dashboard is loaded.",
+
+    "OPTIONS": "选项",
+    "USEDARKTHEME": "深色皮肤",
+    "USEMARGINSBETWEENPANELS": "面板间间隔",
+    "HIDEALLPANELTITLES": "隐藏所有面板标题",
+
+    "DASHBOARD": "@:Dashboard"
+  },
+
+  "VISUALIZE": {
+    "LIMITERROR": "You have {{ totalItems }} visualizations, but your \"listingLimit\" setting prevents the table below from displaying more than {{ listingLimit }}. You can change this setting under ",
+    "DELETESELECTEDITEMSCONFIRM": "你确定要删除已选可视化？这个操作是不可撤销的！",
+    "SEARCHPLD": "@:SEARCHPLD"
   },
 
   "//__comment__raw_start": "key=content的部分，只能是扁平的结构，该类可以不用在en.json里添加",

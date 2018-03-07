@@ -47,27 +47,28 @@
     class="text-center start-screen"
   >
     <h2 class="kuiTitle kuiVerticalRhythm">
-      {{'DASHBOARD.APPEMPTY-TITLE' | translate}}
+      {{ 'DASHBOARD.APPEMPTY-TITLE' | translate | trusted }}
     </h2>
 
     <p class="kuiText kuiVerticalRhythm">
-      {{'DASHBOARD.APPEMPTY-TEXT-CLICK' | translate}} <a kbn-accessible-click class="kuiButton kuiButton--primary kuiButton--small" ng-click="showAddPanel()" aria-label="Add visualization">{{'ADD' | translate}}</a> {{'APPEMPTY-TEXT-ADDVIS' | translate}} <br/>{{'APPEMPTY-TEXT-IFUHAVEVIS' | translate}}  <a class="kuiLink" href="#/visualize">{{'APPEMPTY-TEXT-VISITVISAPP' | translate}}</a> {{'APPEMPTY-TEXT-CREATEVIS' | translate}}
+      {{ 'DASHBOARD.APPEMPTY-TEXT-CLICK' | translate }} <a kbn-accessible-click class="kuiButton kuiButton--primary kuiButton--small" ng-click="showAddPanel()" aria-label="Add visualization">{{ 'ADD' | translate }}</a> {{ 'DASHBOARD.APPEMPTY-TEXT-ADDVIS' | translate }} <br/>{{ 'DASHBOARD.APPEMPTY-TEXT-IFUHAVEVIS' | translate }}  <a class="kuiLink" href="#/visualize">{{ 'DASHBOARD.APPEMPTY-TEXT-VISITVISAPP' | translate }}</a> {{ 'DASHBOARD.APPEMPTY-TEXT-CREATEVIS' | translate }}
     </p>
   </div>
 
   <div ng-show="getShouldShowViewHelp()" class="text-center start-screen">
     <h2 class="kuiTitle kuiVerticalRhythm">
-      This dashboard is empty. Let&rsquo;s fill it up!
+      {{ 'DASHBOARD.VIEWHELP-TITLE' | translate | trusted }}
     </h2>
 
     <p class="kuiText kuiVerticalRhythm">
-      Click the <a kbn-accessible-click class="kuiButton kuiButton--primary kuiButton--small" ng-click="enterEditMode()">Edit</a> button in the menu bar above to start working on your new dashboard.
+      {{ 'DASHBOARD.VIEWHELP-TEXT1' | translate }} <a kbn-accessible-click class="kuiButton kuiButton--primary kuiButton--small" ng-click="enterEditMode()">{{ 'EDIT' | translate }}</a> {{ 'DASHBOARD.VIEWHELP-TEXT2' | translate }}
     </p>
   </div>
 
   <dashboard-viewport-provider
     get-container-api="getContainerApi"
     get-embeddable-factory="getEmbeddableFactory"
+    t="t"
   >
   </dashboard-viewport-provider>
 

@@ -1,3 +1,7 @@
 <div class="kuiToolBarText">
-  {{ toolBarPagerText.startItem | number }}&ndash;{{ toolBarPagerText.endItem | number }} of {{ toolBarPagerText.totalItems | number }}
+  {{ 'TOOLBARPAGERTEXT' | translate:{
+    startItem: (toolBarPagerText.startItem | number),
+    endItem: (toolBarPagerText.endItem | number),
+    totalItems: (toolBarPagerText.totalItems | number)
+  } }}
 </div>

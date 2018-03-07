@@ -1,6 +1,6 @@
 <form role="form">
   <h2 class="kuiLocalDropdownTitle">
-    Options
+    {{ 'Options' | i18nT:'DASHBOARD'}}
   </h2>
 
   <div class="kuiLocalDropdownSection">
@@ -14,7 +14,7 @@
       >
 
       <span class="kuiCheckBoxLabel__text">
-        Use dark theme
+        {{ 'Use dark theme' | i18nT:'DASHBOARD'}}
       </span>
     </label>
     <label class="kuiCheckBoxLabel">
@@ -26,7 +26,7 @@
         data-test-subj="dashboardMarginsCheckbox"
       >
       <span class="kuiCheckBoxLabel__text">
-        Use margins between panels
+        {{ 'Use margins between panels' | i18nT:'DASHBOARD' }}
       </span>
     </label>
     <label class="kuiCheckBoxLabel">
@@ -38,7 +38,7 @@
         data-test-subj="dashboardPanelTitlesCheckbox"
       >
       <span class="kuiCheckBoxLabel__text">
-        Hide all panel titles
+        {{ 'Hide all panel titles' | i18nT:'DASHBOARD' }}
       </span>
     </label>
   </div>

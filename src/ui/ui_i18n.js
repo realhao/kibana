@@ -19,6 +19,12 @@ export class UiI18n {
     this._i18n.registerTranslations(resolve(__dirname, './translations/zh-TW.json'));
   }
 
+  getTranslationLocale(request) {
+    const header = request.headers['accept-language'];
+    const tags = acceptLanguageHeaderToBCP47Tags(header);
+    return this._i18n._getTranslationLocale(...tags);
+  }
+
   /**
    *  Fetch the language translations as defined by the request.
    *

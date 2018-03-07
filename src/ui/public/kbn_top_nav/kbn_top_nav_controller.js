@@ -6,7 +6,7 @@ import intervalTemplate from 'ui/chrome/config/interval.html';
 
 export function KbnTopNavControllerProvider($compile, $translate) {
   const translate = function(key, data = { key }, defaultText = '') {
-    let tKey = `TOPNAV.${key.toUpperCase()}`;
+    let tKey = `TOPNAV.${key.replace(/\s+/g, '').toUpperCase()}`;
     let transedText = $translate.instant(tKey, data);
     if (tKey === transedText && !!defaultText) {
       return defaultText;

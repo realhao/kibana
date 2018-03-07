@@ -31,6 +31,7 @@ export function KuiListingTable({
   selectedRowIds,
   filter,
   prompt,
+  toolBarPlaceholder
 }) {
 
   function areAllRowsSelected() {
@@ -113,6 +114,7 @@ export function KuiListingTable({
         pager={pager}
         onFilter={onFilter}
         filter={filter}
+        searchpld={toolBarPlaceholder}
       />
 
       {prompt ? prompt : renderInnerTable()}
@@ -156,6 +158,7 @@ KuiListingTable.PropTypes = {
   prompt: PropTypes.node, // If given, will be shown instead of a table with rows.
   onFilter: PropTypes.func,
   toolBarActions: PropTypes.node,
+  toolBarPlaceholder: PropTypes.string,
   filter: PropTypes.string,
 };
 

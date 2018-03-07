@@ -19,7 +19,7 @@ function getFieldValueCounts(params) {
     || params.field.type === 'geo_shape'
     || params.field.type === 'attachment'
   ) {
-    return { error: 'Analysis is not available for geo fields.' };
+    return { error: 'DISCOVER.FIELD-ERROR-GEO' };
   }
 
   const allValues = getFieldValues(params.hits, params.field);
@@ -40,9 +40,7 @@ function getFieldValueCounts(params) {
 
     if (params.hits.length - missing === 0) {
       return {
-        error: 'This field is present in your elasticsearch mapping' +
-          ' but not in any documents in the search results.' +
-          ' You may still be able to visualize or search on it.'
+        error: 'DISCOVER.FIELD-ERROR-NORESULTS'
       };
     }
 

@@ -29,7 +29,8 @@ export function KuiToolBarSearchBox({ filter, onFilter, placeholder, className, 
 
 KuiToolBarSearchBox.propTypes = {
   filter: PropTypes.string,
-  onFilter: PropTypes.func.isRequired
+  onFilter: PropTypes.func.isRequired,
+  placeholder: PropTypes.string
 };
 
 KuiToolBarSearchBox.defaultProps = {

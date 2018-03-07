@@ -65,7 +65,7 @@
           <!-- loading -->
           <div ng-show="resultState === 'loading'">
             <div class="discover-overlay">
-              <h2>Searching</h2>
+              <h2>{{ 'DISCOVER.SEARCHING' | translate }}</h2>
               <div ng-show="fetchStatus">{{fetchStatus.complete}}/{{fetchStatus.total}}</div>
             </div>
           </div>
@@ -78,14 +78,14 @@
             >
               <span class="kuiButton__inner">
                 <span aria-hidden="true" class="kuiButton__icon kuiIcon fa-chevron-down"></span>
-                <span>Skip to bottom</span>
+                <span>{{ 'DISCOVER.SKIPTOBOTTOM' | translate }}</span>
               </span>
             </button>
 
-            <section aria-label="Histogram of found documents" class="discover-timechart" ng-if="opts.timefield">
+            <section aria-label="{{ 'DISCOVER.HISTOGRAMOFFOUND' | translate }}" class="discover-timechart" ng-if="opts.timefield">
               <header>
                 <center class="small">
-                  <span tooltip="To change the time, click the clock icon in the navigation bar">{{timeRange.from | moment}} - {{timeRange.to | moment}}</span>
+                  <span tooltip="{{ 'DISCOVER.CHANGETIMETIP' | translate }}">{{timeRange.from | moment}} - {{timeRange.to | moment}}</span>
 
                   &mdash;
 
@@ -102,9 +102,11 @@
                       <kbn-info
                         placement="right"
                         class="kuiIcon--info"
-                        info="This interval creates {{ bucketInterval.scale > 1 ? 'buckets that are too large' : 'too many buckets' }} to show in the selected time range, so it has been scaled to {{ bucketInterval.description }}">
+                        info="{{ 'DISCOVER.SCALEDINFO' | translate:bucketInterval }} ">
                       </kbn-info>
-                      Scaled to {{ bucketInterval.description }}
+                      {{ 'DISCOVER.SCALEDTO' | translate:{
+                        description: bucketInterval.description
+                      } }}
                     </span>
                   </span>
                 </center>
@@ -146,9 +148,8 @@
               <a tabindex="0" id="discoverBottomMarker"></a>
 
               <div ng-if="rows.length == opts.sampleSize" class="discover-table-footer">
-                These are the first {{opts.sampleSize}} documents matching
-                your search, refine your search to see others.
-                <a kbn-accessible-click ng-click="scrollToTop()">Back to top.</a>
+                {{ 'DISCOVER.SAMPLESIZEINFO' | translate:opts }}
+                <a kbn-accessible-click ng-click="scrollToTop()">{{ 'DISCOVER.BACKTOTOP' | translate }}</a>
               </div>
             </section>
           </div>

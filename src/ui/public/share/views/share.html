@@ -6,16 +6,18 @@
       data-test-subj="shareUiTitle"
       class="kuiLocalDropdownTitle"
     >
-      Share saved {{share.objectType}}
+      {{ 'SHARE.TITLE' | translate:{
+        objectType: (share.objectType | i18nT:'SHARE')
+      } }}
     </h2>
 
     <!-- Help text -->
     <div ng-if="share.urls.original" class="kuiLocalDropdownHelpText">
-      You can share this URL with people to let them load the most recent saved version of this {{share.objectType}}.
+      {{ 'SHARE.DROPDOWNHELPTEXT' | translate:share }}
     </div>
 
     <div ng-if="!share.urls.original" class="kuiLocalDropdownWarning">
-      Please save this {{share.objectType}} to enable this sharing option.
+      {{ 'SHARE.DROPDOWNWARNING' | translate:share }}
     </div>
 
     <div ng-if="share.urls.original">
@@ -28,7 +30,7 @@
             class="kuiLocalDropdownHeader__label"
             for="originalIframeUrl"
           >
-            Embedded iframe
+            {{ 'SHARE.EMBEDDEDIFRAME' | translate }}
           </label>
           <div class="kuiLocalDropdownHeader__actions">
             <a
@@ -37,7 +39,7 @@
               ng-click="share.copyToClipboard('#originalIframeUrl')"
               kbn-accessible-click
             >
-              Copy
+              {{ 'SHARE.COPY' | translate }}
             </a>
           </div>
         </div>
@@ -57,7 +59,7 @@
           id="originalIframeUrlHelpText"
           class="kuiLocalDropdownFormNote"
         >
-          Add to your HTML source. Note that all clients must be able to access Kibana.
+          {{ 'SHARE.DROPDOWNFORMNOTE' | translate }}
         </div>
       </div>
 
@@ -70,7 +72,7 @@
             class="kuiLocalDropdownHeader__label"
             for="originalUrl"
           >
-            Link
+            {{ 'SHARE.LINK' | translate }}
           </label>
           <div class="kuiLocalDropdownHeader__actions">
             <a
@@ -79,7 +81,7 @@
               ng-click="share.copyToClipboard('#originalUrl')"
               kbn-accessible-click
             >
-              Copy
+              {{ 'SHARE.COPY' | translate }}
             </a>
           </div>
         </div>
@@ -100,12 +102,12 @@
   <div class="kuiLocalDropdownPanel kuiLocalDropdownPanel--right">
     <!-- Title -->
     <h2 class="kuiLocalDropdownTitle">
-      Share Snapshot
+      {{ 'SHARE.SHARESNAPSHOT' | translate }}
     </h2>
 
     <!-- Help text -->
     <div class="kuiLocalDropdownHelpText">
-      Snapshot URLs encode the current state of the {{share.objectType}} in the URL itself. Edits to the saved {{share.objectType}} won't be visible via this URL.
+      {{ 'SHARE.DROPDOWNHELPTEXT2' | translate:share }}
     </div>
 
     <!-- iframe -->
@@ -117,7 +119,7 @@
           class="kuiLocalDropdownHeader__label"
           for="snapshotIframeUrl"
         >
-          Embedded iframe
+          {{ 'SHARE.EMBEDDEDIFRAME' | translate }}
         </label>
         <div class="kuiLocalDropdownHeader__actions">
           <a
@@ -127,7 +129,7 @@
             ng-click="share.toggleShortSnapshotIframeUrl()"
             kbn-accessible-click
           >
-            Short URL
+            {{ 'SHARE.SHORTURL' | translate }}
           </a>
 
           <a
@@ -137,7 +139,7 @@
             ng-click="share.toggleShortSnapshotIframeUrl()"
             kbn-accessible-click
           >
-            Long URL
+            {{ 'SHARE.LONGURL' | translate }}
           </a>
 
           <a
@@ -146,7 +148,7 @@
             ng-click="share.copyToClipboard('#snapshotIframeUrl')"
             kbn-accessible-click
           >
-            Copy
+            {{ 'SHARE.COPY' | translate }}
           </a>
         </div>
       </div>
@@ -166,7 +168,7 @@
         id="snapshotIframeUrlHelpText"
         class="kuiLocalDropdownFormNote"
       >
-        Add to your HTML source. Note that all clients must be able to access Kibana.
+        {{ 'SHARE.DROPDOWNFORMNOTE2' | translate }}
       </div>
     </div>
 
@@ -179,7 +181,7 @@
           class="kuiLocalDropdownHeader__label"
           for="snapshotUrl"
         >
-          Link
+          {{ 'SHARE.LINK' | translate }}
         </label>
         <div class="kuiLocalDropdownHeader__actions">
           <a
@@ -190,7 +192,7 @@
             ng-click="share.toggleShortSnapshotUrl()"
             kbn-accessible-click
           >
-            Short URL
+            {{ 'SHARE.SHORTURL' | translate }}
           </a>
 
           <a
@@ -200,7 +202,7 @@
             ng-click="share.toggleShortSnapshotUrl()"
             kbn-accessible-click
           >
-            Long URL
+            {{ 'SHARE.LONGURL' | translate }}
           </a>
 
           <a
@@ -210,7 +212,7 @@
             ng-click="share.copyToClipboard('#snapshotUrl')"
             kbn-accessible-click
           >
-            Copy
+            {{ 'SHARE.COPY' | translate }}
           </a>
         </div>
       </div>
@@ -231,7 +233,7 @@
         id="snapshotUrlHelpText"
         class="kuiLocalDropdownFormNote"
       >
-        We recommend sharing shortened snapshot URLs for maximum compatibility. Internet Explorer has URL length restrictions, and some wiki and markup parsers don't do well with the full-length version of the snapshot URL, but the short URL should work great.
+        {{ 'SHARE.DROPDOWNFORMNOTE3' | translate }}
       </div>
     </div>
   </div>

@@ -2,20 +2,20 @@
   <div class="filter-bar-confirm" ng-show="newFilters.length">
     <form ng-submit="applyFilters(newFilters)">
     <ul class="list-unstyled">
-      <li>Apply these filters?</li>
+      <li>{{ 'FILTERBAR.APPLYFILTERS' | translate }}</li>
       <li ng-repeat="filter in newFilters track by $index" class="filter" ng-click="filter.meta.apply = !filter.meta.apply"><input type="checkbox" ng-checked="filter.meta.apply"/> {{ filter.meta.key }}: {{ filter.meta.value }}</li>
-      <li ng-if="changeTimeFilter" class="changeTimeFilter filter" ng-click="changeTimeFilter.meta.apply = !changeTimeFilter.meta.apply"><input type="checkbox" ng-checked="changeTimeFilter.meta.apply"/> <strong>Change time to:</strong> {{changeTimeFilter.meta.value}} </li>
+      <li ng-if="changeTimeFilter" class="changeTimeFilter filter" ng-click="changeTimeFilter.meta.apply = !changeTimeFilter.meta.apply"><input type="checkbox" ng-checked="changeTimeFilter.meta.apply"/> <strong>{{ 'FILTERBAR.CHANGETIMETO' | translate }}</strong> {{changeTimeFilter.meta.value}} </li>
       <li>
         <div class="kuiButtonGroup">
           <button class="kuiButton kuiButton--primary kuiButton--small">
-            Apply Now
+            {{ 'FILTERBAR.APPLYNOW' | translate }}
           </button>
 
           <button
             class="kuiButton kuiButton--hollow"
             ng-click="clearFilterBar();"
           >
-            Cancel
+            {{ 'FILTERBAR.CANCEL' | translate }}
           </button>
         </div>
       </li>
@@ -47,7 +47,7 @@
           kbn-accessible-click
           data-test-subj="addFilter"
         >
-          Add a filter
+          {{ 'FILTERBAR.ADDFILTER' | translate }}
           <span class="fa fa-plus"></span>
         </a>
       </div>
@@ -64,7 +64,7 @@
           aria-expanded="{{!!showFilterActions}}"
           aria-controls="filterActionsAllContainer"
         >
-          Actions
+          {{ 'FILTERBAR.ACTIONS' | translate }}
           <span
             class="fa"
             ng-class="{
@@ -98,28 +98,28 @@
   >
     <div class="filter-actions-all">
       <div class="filter-link">
-        <div class="filter-description"><strong>All filters:</strong></div>
+        <div class="filter-description"><strong>{{ 'FILTERBAR.ALLFILTERS' | translate }}</strong></div>
       </div>
         <div class="filter-link">
-          <div class="filter-description"><a ng-click="toggleAll(false)" kbn-accessible-click>Enable</a></div>
+          <div class="filter-description"><a ng-click="toggleAll(false)" kbn-accessible-click>{{ 'FILTERBAR.ENABLE' | translate }}</a></div>
         </div>
       <div class="filter-link">
-        <div class="filter-description"><a ng-click="toggleAll(true)" kbn-accessible-click>Disable</a></div>
+        <div class="filter-description"><a ng-click="toggleAll(true)" kbn-accessible-click>{{ 'FILTERBAR.DISABLE' | translate }}</a></div>
       </div>
       <div class="filter-link">
-        <div class="filter-description"><a ng-click="pinAll(true)" kbn-accessible-click>Pin</a></div>
+        <div class="filter-description"><a ng-click="pinAll(true)" kbn-accessible-click>{{ 'FILTERBAR.PIN' | translate }}</a></div>
       </div>
       <div class="filter-link">
-        <div class="filter-description"><a ng-click="pinAll(false)" kbn-accessible-click>Unpin</a></div>
+        <div class="filter-description"><a ng-click="pinAll(false)" kbn-accessible-click>{{ 'FILTERBAR.UNPIN' | translate }}</a></div>
       </div>
       <div class="filter-link">
-        <div class="filter-description"><a ng-click="invertAll()" kbn-accessible-click>Invert</a></div>
+        <div class="filter-description"><a ng-click="invertAll()" kbn-accessible-click>{{ 'FILTERBAR.INVERT' | translate }}</a></div>
       </div>
       <div class="filter-link">
-        <div class="filter-description"><a ng-click="toggleAll()" kbn-accessible-click>Toggle</a></div>
+        <div class="filter-description"><a ng-click="toggleAll()" kbn-accessible-click>{{ 'FILTERBAR.TOGGLE' | translate }}</a></div>
       </div>
       <div class="filter-link">
-        <div class="filter-description"><a ng-click="removeAll()" data-test-subj="removeAllFilters" kbn-accessible-click>Remove</a></div>
+        <div class="filter-description"><a ng-click="removeAll()" data-test-subj="removeAllFilters" kbn-accessible-click>{{ 'FILTERBAR.REMOVE' | translate }}</a></div>
       </div>
     </div>
   </div>

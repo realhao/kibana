@@ -9,6 +9,16 @@
   "HIT": "次命中",
   "HITS": "次命中",
   "ADD": "新增",
+  "EDIT": "编辑",
+  "GO": "设置",
+  "SAVE": "保存",
+  "CANCEL": "取消",
+  "EXITFULLSCREEN": "退出全屏",
+  "EXITFULLSCREENMODE": "退出全屏状态",
+  "COPY": "复制",
+  "LINK": "链接",
+  "Delete": "删除",
+  "Warning": "警告",
 
   "//__comment__topNav": "公共顶部组件提取",
   "TOPNAV": {
@@ -20,7 +30,14 @@
     "SEARCHINPUT": "检索输入",
     "SEARCH": "开始检索",
     "USELUCENESYNTAX": "使用lucene检索语法",
-    "USEKUERYSYNTAX": "使用kuery语法"
+    "USEKUERYSYNTAX": "使用kuery语法",
+    "FULLSCREEN": "全屏",
+    "CLONE": "@:CPOY",
+    "EDIT": "@:EDIT",
+    "CANCEL": "@:CANCEL",
+    "ADD": "@:ADD",
+    "OPTIONS": "选项",
+    "REFRESH": "刷新"
   },
 
   "//__comment__timePicker": "时间选择器组件提取",
@@ -44,6 +61,86 @@
     "FROMBEFORETONOTE": "<strong>开始时间</strong>必须早于<strong>结束时间</strong>",
     "ROUND": "精确到{{unit}}"
   },
+
+  "//__comment__filterBar": "过滤器提取",
+  "FILTERBAR": {
+    "APPLYFILTERS": "使用这些过滤条件？",
+    "CHANGETIMETO": "时间调整为：",
+    "APPLYNOW": "立即使用",
+    "ADDFILTER": "添加过滤条件",
+    "ACTIONS": "操作",
+    "ALLFILTERS": "所有过滤条件：",
+    "ENABLE": "启用",
+    "DISABLE": "禁用",
+    "PIN": "固定",
+    "UNPIN": "取消固定",
+    "INVERT": "取反",
+    "TOGGLE": "开关",
+    "REMOVE": "删除",
+
+    "ADD": "新增",
+    "EDIT": "编辑",
+    "filter": "过滤条件",
+    "Filter": "过滤条件",
+    "SEARCHFILTERVALUES": "查找过滤值",
+    "EDITQUERYDSL": "编辑查询DSL",
+    "FILTERBUILTIN": "过滤条件组成自",
+    "ESQUERYDSL": "ES查询DSL",
+    "LABEL": "标签",
+    "ACCEPTEDDATEFORMATS": "允许的时间格式",
+    "VALUES": "值...",
+    "FROM": "开始于...",
+    "TO": "结束于..."
+  },
+
+  "VISUALIZATION": {
+    "NORESULTS": "没有结果",
+    "NOTACCESSTIP": "视图{{title}}不可以访问"
+  },
+
+  "TOOLBARPAGERTEXT": "{{startItem}}-{{endItem}}, 共{{totalItems}}",
+
+  "SHARE": {
+    "TITLE": "分享已保存的{{objectType}}",
+    "DROPDOWNHELPTEXT": "You can share this URL with people to let them load the most recent saved version of this {{objectType}}.",
+    "DROPDOWNWARNING": "Please save this {{objectType}} to enable this sharing option.",
+    "EMBEDDEDIFRAME": "插入iframe",
+    "COPY": "@:COPY",
+    "DROPDOWNFORMNOTE": "Add to your HTML source. Note that all clients must be able to access Kibana.",
+    "LINK": "@:LINK",
+    "SHARESNAPSHOT": "分享快照",
+    "DROPDOWNHELPTEXT2": "Snapshot URLs encode the current state of the {{objectType}} in the URL itself. Edits to the saved {{objectType}} won't be visible via this URL.",
+    "SHORTURL": "短链接",
+    "LONGURL": "长链接",
+    "DROPDOWNFORMNOTE2": "Add to your HTML source. Note that all clients must be able to access Kibana.",
+    "DROPDOWNFORMNOTE3": "We recommend sharing shortened snapshot URLs for maximum compatibility. Internet Explorer has URL length restrictions, and some wiki and markup parsers don't do well with the full-length version of the snapshot URL, but the short URL should work great.",
+    "DASHBOARD": "@:Dashboard",
+    "VISUALIZATION": "@:Visualize"
+  },
+
+  "SAVEDOBJECTSAVEASCHECKBOX": {
+    "PREVIOUSCHANGENAMECOPYNOTE": "Kibana较早版本里，修改{{displayName}}名称会以新名称命名复制一份，现在需要选中“保存为新的{{displayName}}”选项。",
+    "SAVEASNEW": "保存为新的{{displayName}}",
+    "DASHBOARD": "@:Dashboard",
+    "VISUALIZATION": "@:Visualize"
+  },
+
+  "SAVEDOBJECTFINDER": {
+    "//__comment_for_i18nT_replace_variable": "",
+    "VISUALIZATIONS": "可视化",
+    "VISUALIZATION": "@:SAVEDOBJECTFINDER.VISUALIZATIONS",
+    "SEARCHES": "查询",
+    "SEARCHE": "@:SAVEDOBJECTFINDER.SEARCHES",
+    "SAVEDSEARCHES": "已保存的查询",
+    "PLD": "{{ type }}过滤...",
+    "PAGE": "{{ pageFirstItem }}-{{ pageLastItem }}, 共{{ hitCount }}",
+    "ADDNEW": "新增{{ noun }}",
+    "MANAGE": "管理{{ nouns }}",
+    "NOMATCH": "没有找到匹配的{{ nouns }}。"
+},
+
+  "//__comment__for_i18nT": "",
+  "DASHBOARD": "@:Dashboard",
 
   "//__comment__raw_start": "key=content的部分，只能是扁平的结构，该类可以不用在en.json里添加",
   "Discover": "日志检索",

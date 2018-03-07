@@ -26,7 +26,7 @@
   </div>
 
   <div class="sidebar-list-header">
-    <h3 class="sidebar-list-header-label" id="selected_fields" tabindex="0">Selected Fields</h3>
+    <h3 class="sidebar-list-header-label" id="selected_fields" tabindex="0">{{ 'DISCOVER.SELECTEDFIELDS' | translate }}</h3>
   </div>
   <ul class="list-unstyled discover-selected-fields" >
     <discover-field
@@ -41,7 +41,7 @@
   </ul>
 
   <div class="sidebar-list-header sidebar-item">
-    <h3 class="sidebar-list-header-label" id="available_fields" tabindex="0">Available Fields
+    <h3 class="sidebar-list-header-label" id="available_fields" tabindex="0">{{ 'DISCOVER.AVAILABLEFIELDS' | translate }}
       <span
         ng-class="{ 'fa-chevron-right': !showFields, 'fa-chevron-down': showFields }"
         ng-click="showFields = !showFields"
@@ -67,7 +67,7 @@
     <form role="form">
       <div class="form-group">
         <label for="discoverFieldChooserFilterAggregatable">
-          Aggregatable
+          {{ 'DISCOVER.AGGREGATABLE' | translate }}
         </label>
         <select
           id="discoverFieldChooserFilterAggregatable"
@@ -78,7 +78,7 @@
       </div>
       <div class="form-group">
         <label for="discoverFieldChooserFilterSearchable">
-          Searchable
+          {{ 'DISCOVER.SEARCHABLE' | translate }}
         </label>
         <select
           id="discoverFieldChooserFilterSearchable"
@@ -89,7 +89,7 @@
       </div>
       <div class="form-group">
         <label for="discoverFieldChooserFilterType">
-          Type
+          {{ 'DISCOVER.TYPE' | translate }}
         </label>
         <select
           id="discoverFieldChooserFilterType"
@@ -100,7 +100,7 @@
       </div>
       <div class="form-group">
         <label for="discoverFieldChooserFilterFieldName">
-          Field name
+          {{ 'DISCOVER.FIELDNAME' | translate }}
         </label>
         <input
           id="discoverFieldChooserFilterFieldName"
@@ -112,7 +112,7 @@
       <div class="form-group">
         <label for="discoverFieldChooserHideMissingFields">
           <input id="discoverFieldChooserHideMissingFields" type="checkbox" ng-model="filter.vals.missing">
-          Hide Missing Fields
+          {{ 'DISCOVER.HIDEMISSINGFIELDS' | translate }}
         </label>
       </div>
       <button
@@ -120,7 +120,7 @@
         ng-disabled="!filter.active"
         class="kuiButton kuiButton--danger kuiButton--fullWidth"
       >
-        Reset Filters
+        {{ 'DISCOVER.RESETFILTERS' | translate }}
       </button>
     </form>
   </div>
@@ -130,7 +130,7 @@
     ng-class="{ 'hidden-sm': !showFields, 'hidden-xs': !showFields }"
     class="list-unstyled sidebar-well discover-popular-fields">
     <li class="sidebar-item sidebar-list-header">
-      <h6>Popular</h6>
+      <h6>{{ 'DISCOVER.POPULAR' | translate }}</h6>
     </li>
     <discover-field
       ng-repeat="field in popularFields | filter:filter.isFieldFiltered"

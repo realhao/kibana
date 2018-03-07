@@ -9,6 +9,13 @@ export default function (chrome, internals) {
    */
 
   /**
+   * @return {string} - local language tag
+   */
+  chrome.getLocalLanguage = function () {
+    return internals.localLanguage || 'en';
+  };
+
+  /**
    * @return {Object} - Translations
    */
   chrome.getTranslations = function () {
@@ -16,18 +23,43 @@ export default function (chrome, internals) {
     return internals.translations || {};
   };
 
+  /**
+   * 1. wrap custom translate function, can be used for react component
+   * 2. use for translate content and with namespace
+   *    eg translateId is 'NS.HELLO' can be
+   *    a. t('hello', 'ns')
+   *    b. t('hello', { replaceVar: 'foo', ns: 'ns' })
+   *    c. t('ns.hello', '')
+   * 3. if translated text equal to translateId, return input content 'hello'
+   * @param {string} - translated string  
+   */
   chrome.getReactTranslateFun = function ($translate) {
-    let translate = function (key, data) {
+    let translate = function (key, data = {}, ...rest) {
+
+      if (!key) {
+        return '';
+      }
+
       if (!_.isFunction($translate)) {
-        $translate = function (key, data) {
+        $translate = function (key) {
           return key;
         };
       }
 
-      let translatedText = $translate(key, data);
+      let translateId = key;
+      if (_.isString(data) || data.ns) {
+        let ns = data.ns ? data.ns : data;
+        translateId = `${ns}${ns ? '.' : ''}${key}`.replace(/\s+/g, '').toUpperCase();
+        if (data.ns) {
+          data = _.omit(data, 'ns');
+        }
+      }
 
-      if (internals.devMode && translatedText === key) {
-        console.warn('May Not Translate Key: %s', key);
+      let translatedText = $translate(translateId, data, ...rest);
+
+      if (internals.devMode && translatedText === translateId) {
+        console.warn('May Not Translated TranslateId: %s', translateId);
+        return key;
       }
       return translatedText;
     };

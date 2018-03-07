@@ -31,4 +31,9 @@ routes
 
 chrome.setRootController('kibana', KibanaRootController);
 
-uiModules.get('kibana').run(Notifier.pullMessageFromUrl);
+uiModules
+  .get('kibana')
+  .run(Notifier.pullMessageFromUrl)
+  .run(function ($rootScope, $filter, $translate) {
+    $rootScope.t = chrome.getReactTranslateFun($translate.instant);
+  });

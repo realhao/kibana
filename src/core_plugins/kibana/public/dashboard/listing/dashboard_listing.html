@@ -9,7 +9,7 @@
       role="heading"
       aria-level="1"
     >
-      Dashboard
+      {{ 'DASHBOARD.TITLE' | translate }}
     </div>
   </div>
 </kbn-top-nav>
@@ -22,7 +22,7 @@
     <div class="kuiInfoPanel kuiInfoPanel--warning">
       <div class="kuiInfoPanelBody">
         <div class="kuiInfoPanelBody__message">
-          You have {{ listingController.totalItems }} dashboards, but your "listingLimit" setting prevents the table below from displaying more than {{ listingController.listingLimit }}. You can change this setting under <a kbn-href="#/management/kibana/settings" class="kuiLink">Advanced Settings</a>.
+          {{ 'DASHBOARD.LIMITERROR' | translate:listingController }} <a kbn-href="#/management/kibana/settings" class="kuiLink">{{ 'DASHBOARD.ADVANCEDSETTINGS' | translate }}</a>{{ 'DOT' | translate }}
         </div>
       </div>
     </div>
@@ -37,8 +37,8 @@
           <input
             class="kuiToolBarSearchBox__input"
             type="text"
-            placeholder="Search..."
-            aria-label="Filter dashboards"
+            placeholder="{{ 'DASHBOARD.SEARCH' | translate }}"
+            aria-label="{{ 'DASHBOARD.FILTERDASHBOARDS' | translate }}"
             data-test-subj="searchFilter"
             ng-model="listingController.filter"
           >
@@ -50,9 +50,9 @@
         <button
           class="kuiButton kuiButton--danger"
           ng-click="listingController.deleteSelectedItems()"
-          aria-label="Delete selected dashboards"
+          aria-label="{{ 'DASHBOARD.DELSEL' | translate }}"
           ng-if="listingController.getSelectedItemsCount() > 0 && !listingController.hideWriteControls"
-          tooltip="Delete selected dashboards"
+          tooltip="{{ 'DASHBOARD.DELSEL' | translate }}"
           tooltip-append-to-body="true"
           data-test-subj="deleteSelectedDashboards"
         >
@@ -63,10 +63,10 @@
         <a
           class="kuiButton kuiButton--primary"
           href="{{listingController.getCreateDashboardHref()}}"
-          aria-label="Create new dashboard"
+          aria-label="{{ 'DASHBOARD.CREATEDASHBOARD' | translate }}"
           data-test-subj="newDashboardLink"
           ng-if="listingController.getSelectedItemsCount() === 0 && !listingController.hideWriteControls"
-          tooltip="Create new dashboard"
+          tooltip="{{ 'DASHBOARD.CREATEDASHBOARD' | translate }}"
           tooltip-append-to-body="true"
         >
           <span aria-hidden="true" class="kuiButton__icon kuiIcon fa-plus"></span>
@@ -95,7 +95,7 @@
       ng-if="!listingController.items.length && listingController.filter"
     >
       <div class="kuiTableInfo">
-        No dashboards matched your search.
+        {{ 'DASHBOARD.NODASHBOARDMATCHED' | translate }}
       </div>
     </div>
 
@@ -106,7 +106,7 @@
     >
       <div class="kuiEmptyTablePrompt">
         <div class="kuiEmptyTablePrompt__message">
-          Looks like you don&rsquo;t have any dashboards. <span ng-if="!listingController.hideWriteControls">Let&rsquo;s create some!</span>
+          {{ 'DASHBOARD.LOOKSUDONTHAVEANYDASHBOARDS' | translate }} <span ng-if="!listingController.hideWriteControls">{{ 'DASHBOARD.LETSCREATESOME' | translate }}</span>
         </div>
 
         <div class="kuiEmptyTablePrompt__actions" ng-if="!listingController.hideWriteControls">
@@ -117,7 +117,7 @@
           >
             <span class="kuiButton__inner">
               <span class="kuiButton__icon kuiIcon fa-plus"></span>
-              <span>Create a dashboard</span>
+              <span>{{ 'DASHBOARD.CRATEADASHBOARD' | translate }}</span>
             </span>
           </a>
         </div>
@@ -139,7 +139,7 @@
                 class="kuiCheckBox"
                 ng-checked="listingController.areAllItemsChecked()"
                 ng-click="listingController.toggleAll()"
-                aria-label="{{listingController.areAllItemsChecked() ? 'Deselect all rows' : 'Select all rows'}}"
+                aria-label="{{(listingController.areAllItemsChecked() ? 'DASHBOARD.DESELECTALL' : 'DASHBOARD.SELECTALL') | translate }}"
               >
             </div>
           </th>
@@ -149,10 +149,10 @@
               class="kuiTableHeaderCellButton"
               ng-class="{'kuiTableHeaderCellButton-isSorted': listingController.getSortedProperty().name == 'title'}"
               ng-click="listingController.sortOn('title')"
-              aria-label="{{listingController.isAscending('title') ? 'Sort name descending' : 'Sort name ascending'}}"
+              aria-label="{{(listingController.isAscending('title') ? 'DASHBOARD.NAMEDESCEND' : 'DASHBOARD.NAMEASCEND') | translate }}"
             >
               <span class="kuiTableHeaderCell__liner">
-                Name
+                {{ 'DASHBOARD.NAME' | translate }}
                 <span
                   class="kuiTableSortIcon kuiIcon"
                   ng-class="listingController.isAscending('title') ? 'fa-long-arrow-up' : 'fa-long-arrow-down'"
@@ -166,10 +166,10 @@
               class="kuiTableHeaderCellButton"
               ng-class="{'kuiTableHeaderCellButton-isSorted': listingController.getSortedProperty().name == 'description'}"
               ng-click="listingController.sortOn('description')"
-              aria-label="{{listingController.isAscending('description') ? 'Sort description descending' : 'Sort description ascending'}}"
+              aria-label="{{(listingController.isAscending('description') ? 'DASHBOARD.DESCRIPTIONDESCEND' : 'DASHBOARD.DESCRIPTIONASCEND') | translate}}"
             >
               <span class="kuiTableHeaderCell__liner">
-                Description
+                {{ 'DASHBOARD.DESCRIPTION' | translate }}
                 <span
                   class="kuiTableSortIcon kuiIcon"
                   ng-class="listingController.isAscending('description') ? 'fa-long-arrow-up' : 'fa-long-arrow-down'"
@@ -194,7 +194,7 @@
                 data-test-subj="dashboardListItemCheckbox"
                 ng-click="listingController.toggleItem(item)"
                 ng-checked="listingController.isItemChecked(item)"
-                aria-label="{{listingController.isItemChecked(item) ? 'Deselect row' : 'Select row'}}"
+                aria-label="{{(listingController.isItemChecked(item) ? 'DASHBOARD.DESELECTROW' : 'DASHBOARD.SELECTROW') | translate }}"
               >
             </div>
           </td>
@@ -223,7 +223,7 @@
     <div class="kuiToolBarFooter">
       <div class="kuiToolBarFooterSection">
         <div class="kuiToolBarText" ng-hide="listingController.getSelectedItemsCount() === 0">
-          {{ listingController.getSelectedItemsCount() }} selected
+          {{ 'DASHBOARD.SELECTED' | translate:{num:listingController.getSelectedItemsCount()} }}
         </div>
       </div>
 

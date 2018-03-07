@@ -1,8 +1,10 @@
 <div ng-hide="!savedObject.id || savedObject.isSaving">
   <div ng-hide="!savedObject.isTitleChanged() || savedObject.copyOnSave" class="kuiLocalDropdownWarning kuiVerticalRhythmSmall">
-    In previous versions of Kibana, changing the name of a {{savedObject.getDisplayName()}} would make a copy with the new name. Use the 'Save as a new {{savedObject.getDisplayName()}}' checkbox to do this now.
+    {{ 'SAVEDOBJECTSAVEASCHECKBOX.PREVIOUSCHANGENAMECOPYNOTE' | translate:{
+      displayName: (savedObject.getDisplayName() | i18nT:'SAVEDOBJECTSAVEASCHECKBOX')
+    } }}
   </div>
-
+  
   <label class="kuiCheckBoxLabel kuiVerticalRhythmSmall">
     <input
       class="kuiCheckBox"
@@ -13,7 +15,9 @@
     >
 
     <span class="kuiCheckBoxLabel__text">
-      Save as a new {{savedObject.getDisplayName()}}
+      {{ 'SAVEDOBJECTSAVEASCHECKBOX.SAVEASNEW' | translate:{
+        displayName: (savedObject.getDisplayName() | i18nT:'SAVEDOBJECTSAVEASCHECKBOX')
+      } }}
     </span>
   </label>
 </div>
