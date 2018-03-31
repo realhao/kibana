@@ -18,6 +18,7 @@
             ></span>&nbsp;
           </span>
           <span data-test-subj="discoverQueryHits" class="kuiLocalBreadcrumb__emphasis">{{(hits || 0) | number:0}}</span>
+          {{ 'DISCOVER.HITS' | translate:{num:hits}:"messageformat" }}
           <ng-pluralize count="hits" when="{'1':'{{&quot;HIT&quot; | translate}}', 'other':'{{&quot;HITS&quot; | translate}}'}"></ng-pluralize>
         </h1>
       </div>

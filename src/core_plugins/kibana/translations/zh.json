@@ -67,8 +67,11 @@
     "EXAMPLE2": "Or we can search in a specific field. Find 200 in the status field:",
     "EXAMPLE3": "Find all status codes between 400-499:",
     "EXAMPLE4": "Find status codes 400-499 with the extension php:",
-    "EXAMPLE5": "Or HTML"
-  },
+    "EXAMPLE5": "Or HTML",
+
+    "HITS": "{num, plural, =1{次命中} other{次命中}}"
+
+},
 
   "DASHBOARD": {
     "TITLE": "仪表盘",
