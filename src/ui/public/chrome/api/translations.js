@@ -19,7 +19,6 @@ export default function (chrome, internals) {
    * @return {Object} - Translations
    */
   chrome.getTranslations = function () {
-    console.log(internals.translations);
     return internals.translations || {};
   };
 
