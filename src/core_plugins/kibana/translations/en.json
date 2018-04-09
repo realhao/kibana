@@ -133,5 +133,9 @@
     "LIMITERROR": "You have {{ totalItems }} visualizations, but your \"listingLimit\" setting prevents the table below from displaying more than {{ listingLimit }}. You can change this setting under ",
     "DELETESELECTEDITEMSCONFIRM": "Are you sure you want to delete the selected visualizations? This action is irreversible!",
     "SEARCHPLD": "@:SEARCHPLD"
+  },
+
+  "MANAGEMENT": {
+    "VERSION": "Version"
   }
 }

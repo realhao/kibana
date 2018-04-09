@@ -136,6 +136,10 @@
     "SEARCHPLD": "@:SEARCHPLD"
   },
 
+  "MANAGEMENT": {
+    "VERSION": "版本"
+  },
+
   "//__comment__raw_start": "key=content的部分，只能是扁平的结构，该类可以不用在en.json里添加",
   "Welcome to Kibana": "欢迎使用Kibana",
   "Data already in Elasticsearch?": "Es里已经存在数据？"

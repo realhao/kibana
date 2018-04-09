@@ -1,28 +1,30 @@
+import _ from 'lodash';
+import { metadata } from 'ui/metadata';
 import { uiModules } from 'ui/modules';
 const module = uiModules.get('kibana');
 
 /**
- * 1. translate content with namespace in a freindly way.
+ * 1. translate content with namespace in a friendly way.
  *    eg translateId is 'NS.HELLO' can be used in
- *      a. t('hello', 'ns')
- *      b. t('hello', { replaceVar: 'foo', ns: 'ns' })
- *      c. t('ns.hello', '') // it seems not so good
+ *       {{ 'hello' | i18nT:'ns' }}
  * 
  * 2. if translated text equal to translateId,
- *    return input content 'hello' witch users may like, not 'NS.HELLO'
+ *    return input content 'hello' witch users may want, not 'NS.HELLO'
  * 
- * 3. for completely compatibility with old translate filter
- *    if u don't want to write uppercase letter without namespace
- *    u need to add a empty string as namespace arg
- *    eg: t('hello') === $translate.instant('hello')
- *        t('hello', '') === $translate.instant('HELLO')
+ * 3. a difference between i18nT and translate filter
+ *    the second parameter in i18nT is taken as a namespace
+ *    in translate is taken as interpolate params
+ *    {{ 'hello' | i18nT::{abc:123} }} === {{ 'HELLO' | translate:{abc:123} }}
  * 
+ * translate filter
+ * https://github.com/angular-translate/angular-translate/blob/2.13.1/src/filter/translate.js
+ * $translate.instant
+ * https://github.com/angular-translate/angular-translate/blob/2.13.1/src/service/translate.js
+ *
  * @param {string} - translated string  
  */
 module.filter('i18nT', function ($translate) {
-  let cache = new Map();
-
-  return function (key, data = {}, ...rest) {
+  return function (key, namespace = null, data = null, ...rest) {
 
     if (!key) {
       return '';
@@ -30,17 +32,13 @@ module.filter('i18nT', function ($translate) {
 
     let translateId = key;
     // namespace would only be added if it exits...
-    if (_.isString(data) || data.ns) {
-      let ns = data.ns ? data.ns : data;
-      translateId = `${ns}${ns ? '.' : ''}${key}`.replace(/\s+/g, '').toUpperCase();
-      if (data.ns) {
-        data = _.omit(data, 'ns');
-      }
+    if (_.isString(key) && _.isString(namespace)) {
+      translateId = `${namespace}${namespace ? '.' : ''}${key}`.replace(/\s+/g, '').toUpperCase();
     }
 
-    let translatedText = $translate.instant(tTranslateKey, data, ...rest);
+    let translatedText = $translate.instant(translateId, data, ...rest);
 
-    if (internals.devMode && translatedText === translateId) {
+    if (metadata.devMode && translatedText === translateId) {
       console.warn('May Not Translated TranslateId: %s', translateId);
       return key;
     }

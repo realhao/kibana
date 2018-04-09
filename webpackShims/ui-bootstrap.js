@@ -19,7 +19,6 @@ uiModules
   .config(configI18n);
 
 var kibana = uiModules.get('kibana', ['ui.bootstrap', 'pascalprecht.translate']);
-// console.log('ui-bootstrap')
 module.exports = kibana.config(function ($tooltipProvider) {
   $tooltipProvider.setTriggers({ 'mouseenter': 'mouseleave click' });
 })

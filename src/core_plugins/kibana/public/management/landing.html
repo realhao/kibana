@@ -1,8 +1,8 @@
 <kbn-management-app>
-  <kbn-management-landing>
+  <kbn-management-landing translate-namespace="management">
     <!-- General info -->
     <div class="page-row">
-      <div class="page-row-text">Version: {{::kbnVersion}}</div>
+      <div class="page-row-text">{{::'Version'|i18nT:translateNamespace}}: {{::kbnVersion}}</div>
     </div>
 
     <!-- Management sections for the ES stack -->
