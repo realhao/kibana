@@ -9,7 +9,7 @@ const configI18n = function($translateProvider) {
     .addInterpolation('$translateMessageFormatInterpolation')
     .translations(localLanguage, chrome.getTranslations())
     .preferredLanguage(localLanguage)
-    // Enable escapes HTML in the values of the interpolation parameters
+    // Enable escaping HTML in the values of the interpolation parameters
     // issue in https://angular-translate.github.io/docs/#/guide/19_security
     .useSanitizeValueStrategy('escapeParameters');
 };

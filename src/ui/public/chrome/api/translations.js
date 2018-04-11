@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import i18nWithNamespace from 'ui/utils/i18n_with_namespace';
+
 // eslint-disable-next-line @elastic/kibana-custom/no-default-export
 export default function (chrome, internals) {
   /**
@@ -33,33 +34,10 @@ export default function (chrome, internals) {
    */
   chrome.getReactTranslateFun = function (translateFun) {
     let translate = function (key, namespace, data, ...rest) {
-
-      if (!key) {
-        return '';
-      }
-
-      if (!_.isFunction(translateFun)) {
-        translateFun = function (key) {
-          return key;
-        };
-      }
-
-      let translateId = key;
-      if (_.isString(key) && _.isString(namespace)) {
-        translateId = `${namespace}${namespace ? '.' : ''}${key}`.replace(/\s+/g, '').toUpperCase();
-      }
-
-      let translatedText = translateFun(translateId, data, ...rest);
-
-      if (internals.devMode && translatedText === translateId) {
-        console.warn('May Not Translated TranslateId: %s', translateId);
-        return key;
-      }
-      return translatedText;
+      return i18nWithNamespace([key, namespace, data, ...rest], translateFun);
     };
 
     translate.wrappedInApply = true;
-
     return translate;
   };
 }
